@@ -20,7 +20,7 @@
       -->
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          title="陽性患者数"
+          title="陽性患者が確認された件数"
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
           :chart-data="patientsGraph"
@@ -230,7 +230,7 @@ export default {
             label(tooltipItem, data) {
               const currentData = data.datasets[tooltipItem.datasetIndex]
               const percentage = `${currentData.data[tooltipItem.index]}%`
-      
+
               return `${metroGraph.base_period}の利用者数との相対値: ${percentage}`
             }
           }

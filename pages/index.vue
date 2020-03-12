@@ -13,6 +13,7 @@
       :btn-text="'相談の手順を見る'"
     />
     <v-row class="DataBlock">
+      <!--
       <v-col cols="12" md="6" class="DataCard">
         <svg-card
           title="検査陽性者の状況"
@@ -22,6 +23,7 @@
           <confirmed-cases-table v-bind="confirmedCases" />
         </svg-card>
       </v-col>
+      -->
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="陽性患者数"
@@ -82,6 +84,7 @@
           :url="''"
         />
       </v-col>
+      <!--
       <v-col cols="12" md="6" class="DataCard">
         <metro-bar-chart
           title="都営地下鉄の利用者数の推移"
@@ -92,6 +95,7 @@
           :date="metroGraph.date"
         />
       </v-col>
+      -->
     </v-row>
   </div>
 </template>
@@ -155,7 +159,7 @@ export default {
     //   Data.patients.data.filter(patient => patient['備考'] === '死亡')
     // )
     // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
+    //const confirmedCases = formatConfirmedCases(Data.main_summary)
 
     const sumInfoOfPatients = {
       lText: patientsGraph[
@@ -176,11 +180,11 @@ export default {
       inspectionsGraph,
       inspectionsItems,
       inspectionsLabels,
-      confirmedCases,
+      //confirmedCases,
       sumInfoOfPatients,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: '都内の最新感染動向',
+        title: '三重県内の最新感染動向',
         date: Data.lastUpdate
       },
       newsItems: News.newsItems,
@@ -242,7 +246,7 @@ export default {
   },
   head() {
     return {
-      title: '都内の最新感染動向'
+      title: '三重県内の最新感染動向'
     }
   }
 }

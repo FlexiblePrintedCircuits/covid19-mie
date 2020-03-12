@@ -174,7 +174,7 @@ const config: Configuration = {
   },
   manifest: {
     name: '三重県 新型コロナウイルス感染症 情報まとめサイト',
-    theme_color: '#FF4F02',
+    theme_color: '#ff8d5b',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',

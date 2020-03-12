@@ -38,6 +38,18 @@
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
+        <time-stacked-bar-chart
+          title="検査実施数"
+          :title-id="'number-of-tested'"
+          :chart-id="'time-stacked-bar-chart-inspections'"
+          :chart-data="inspectionsGraph"
+          :date="Data.inspections_summary.date"
+          :items="inspectionsItems"
+          :labels="inspectionsLabels"
+          :unit="'件'"
+        />
+      </v-col>
+      <v-col cols="12" md="6" class="DataCard">
         <data-table
           :title="'陽性患者の属性'"
           :title-id="'attributes-of-confirmed-cases'"
@@ -50,18 +62,7 @@
           "
         />
       </v-col>
-      <v-col cols="12" md="6" class="DataCard">
-        <time-stacked-bar-chart
-          title="検査実施数"
-          :title-id="'number-of-tested'"
-          :chart-id="'time-stacked-bar-chart-inspections'"
-          :chart-data="inspectionsGraph"
-          :date="Data.inspections_summary.date"
-          :items="inspectionsItems"
-          :labels="inspectionsLabels"
-          :unit="'件'"
-        />
-      </v-col>
+      <!--
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="新型コロナコールセンター相談件数"
@@ -84,7 +85,6 @@
           :url="''"
         />
       </v-col>
-      <!--
       <v-col cols="12" md="6" class="DataCard">
         <metro-bar-chart
           title="都営地下鉄の利用者数の推移"
@@ -135,21 +135,22 @@ export default {
     // 感染者数
     const patientsTable = formatTable(Data.patients.data)
     // 退院者グラフ
-    const dischargesGraph = formatGraph(Data.discharges_summary.data)
+    //const dischargesGraph = formatGraph(Data.discharges_summary.data)
 
     // 相談件数
-    const contactsGraph = formatGraph(Data.contacts.data)
+    //const contactsGraph = formatGraph(Data.contacts.data)
     // 帰国者・接触者電話相談センター相談件数
-    const querentsGraph = formatGraph(Data.querents.data)
+    //const querentsGraph = formatGraph(Data.querents.data)
     // 都営地下鉄の利用者数の推移
-    const metroGraph = MetroData
+    //const metroGraph = MetroData
     // 検査実施日別状況
     const inspectionsGraph = [
       Data.inspections_summary.data['県内'],
       Data.inspections_summary.data['その他']
     ]
+
     const inspectionsItems = [
-      '都内発生（疑い例・接触者調査）',
+      '県内発生（疑い例・接触者調査）',
       'その他（チャーター便・クルーズ便）'
     ]
     const inspectionsLabels = Data.inspections_summary.labels
@@ -173,10 +174,10 @@ export default {
       Data,
       patientsTable,
       patientsGraph,
-      dischargesGraph,
-      contactsGraph,
-      querentsGraph,
-      metroGraph,
+      //dischargesGraph,
+      //contactsGraph,
+      //querentsGraph,
+      //metroGraph,
       inspectionsGraph,
       inspectionsItems,
       inspectionsLabels,
@@ -188,7 +189,7 @@ export default {
         date: Data.lastUpdate
       },
       newsItems: News.newsItems,
-      metroGraphOption: {
+      /* metroGraphOption: {
         responsive: true,
         legend: {
           display: true
@@ -224,7 +225,7 @@ export default {
               }
             }
           ]
-        },
+        }, */
         tooltips: {
           displayColors: false,
           callbacks: {
@@ -235,12 +236,12 @@ export default {
             label(tooltipItem, data) {
               const currentData = data.datasets[tooltipItem.datasetIndex]
               const percentage = `${currentData.data[tooltipItem.index]}%`
-
+      
               return `${metroGraph.base_period}の利用者数との相対値: ${percentage}`
             }
           }
         }
-      }
+    //  }
     }
     return data
   },

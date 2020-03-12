@@ -30,7 +30,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp'
+        content: 'https://peaceful-bardeen-317b48.netlify.com/'
       },
       {
         hid: 'og:title',

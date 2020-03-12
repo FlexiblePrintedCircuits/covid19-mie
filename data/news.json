@@ -1,14 +1,14 @@
 {
-  "newsItems": [
+    "newsItems": [
     {
-      "date": "2020/03/09",
-      "url": "https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/1007462.html",
-      "text": "都の備蓄マスク20万枚を都内全区市町村へ提供"
+        "date": "2020/03/12",
+        "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00014.htm",
+        "text": "新型コロナウイルス感染症患者の発生について（２例目）"
     },
     {
-      "date": "2020/03/09",
-      "url": "https://www.fukushihoken.metro.tokyo.lg.jp/oshirase/iryo/maskhaifu0306.html",
-      "text": "都内医療機関及び保健所等へのマスクの配布について"
+        "date": "2020/03/05",
+        "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00005.htm",
+        "text": "新型コロナウイルス関連の肺炎に関する知事から県民へのメッセージ（３月５日）"
     }
-  ]
+    ]
 }

@@ -56,7 +56,9 @@
     "for Enterprises and Employees": "企業の皆様・はたらく皆様へ",
     "Government official website": "三重県公式ホームページ",
     "Message from Governor Suzuki": "知事からのメッセージ",
-    "About us": "当サイトについて"
+    "About us": "当サイトについて",
+    "Ivents Info": "新型コロナウイルス感染症に係る県主催イベントの中止・延期情報",
+    "Facility Info": "新型コロナウイルス感染症に係る県有施設の休館情報"
   }
 }
 </i18n>
@@ -97,6 +99,14 @@ export default {
           title: this.$t('for Enterprises and Employees'),
           link: '/worker',
           divider: true
+        },
+        {
+          title: this.$t('Ivents Info'),
+          link: 'https://www.pref.mie.lg.jp/common/content/000877667.pdf'
+        },
+        {
+          title: this.$t('Facility Info'),
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00004.htm'
         },
         {
           title: this.$t('Message from Governor Suzuki'),

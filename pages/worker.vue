@@ -23,6 +23,13 @@ export default {
             'https://www.pref.mie.lg.jp/SHINSAN/HP/p0016400019.htm',
           body:
             '県では、新型コロナウイルス感染症の流行により影響を受ける、又はその恐れがある中小企業・小規模企業の皆様に対する相談窓口の設置等を行っています。'
+        },
+        {
+          title: '新型コロナウイルスに関するQ&A（労働者の方向け）',
+          link:
+            'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/dengue_fever_qa_00018.html',
+          body:
+            '厚生労働省が公開している、労働者向けの新型コロナウイルスに関するQ&Aがまとめられたページです。'
         }
       ]
     }

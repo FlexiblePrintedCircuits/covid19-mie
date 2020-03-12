@@ -1,4 +1,4 @@
-# Tokyo COVID-19 Task Force website
+# Mie Prefecture COVID-19 Task Force website
 
 ![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
 

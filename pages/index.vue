@@ -25,7 +25,7 @@
           :chart-id="'time-bar-chart-patients'"
           :chart-data="patientsGraph"
           :date="Data.patients.date"
-          :unit="'人'"
+          :unit="'件'"
           :url="
             'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm'
           "

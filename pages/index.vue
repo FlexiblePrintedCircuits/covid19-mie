@@ -27,7 +27,7 @@
           :date="Data.patients.date"
           :unit="'人'"
           :url="
-            'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm'
           "
         />
       </v-col>
@@ -41,6 +41,9 @@
           :items="inspectionsItems"
           :labels="inspectionsLabels"
           :unit="'件'"
+          :url="
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00005.htm'
+          "
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
@@ -52,7 +55,7 @@
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
           :url="
-            'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm'
           "
         />
       </v-col>

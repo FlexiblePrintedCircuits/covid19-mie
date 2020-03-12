@@ -90,7 +90,7 @@ export default {
         {
           icon: 'mdi-account-multiple',
           title: this.$t('for Citizens'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm'
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#006'
         },
         {
           icon: 'mdi-domain',
@@ -100,7 +100,7 @@ export default {
         },
         {
           title: this.$t('Message from Governor Suzuki'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00005.htm'
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00006.htm'
         },
         {
           title: this.$t('About us'),

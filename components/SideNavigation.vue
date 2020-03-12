@@ -51,7 +51,6 @@
     "MiePrefecture": "三重県",
     "Tokyo COVID-19 Task Force": "新型コロナウイルス感染症対策本部",
     "The latest updates": "県内の最新感染動向",
-    "If you have any symptoms": "新型コロナウイルス感染症が心配なときに",
     "for Families with children": "お子様をお持ちの皆様へ",
     "for Citizens": "県民の皆様へ",
     "for Enterprises and Employees": "企業の皆様・はたらく皆様へ",
@@ -82,12 +81,6 @@ export default {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('The latest updates'),
           link: '/'
-        },
-        {
-          icon: 'covid',
-          title: this.$t('If you have any symptoms'),
-          link: '/flow',
-          divider: true
         },
         {
           icon: 'parent',

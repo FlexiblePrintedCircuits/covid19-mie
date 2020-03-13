@@ -1,7 +1,7 @@
 <template>
   <div :class="wrapperClass">
     <div class="PrinterButton">
-      <v-btn outlined color="#FF4F02" href="/print/flow" target="_blank">
+      <v-btn outlined color="#ff8d5b" href="/print/flow" target="_blank">
         <div class="PrinterButton-PrinterIcon">
           <PrinterIcon />
         </div>

@@ -6,12 +6,6 @@
       :date="headerItem.date"
     />
     <whats-new class="mb-4" :items="newsItems" />
-    <static-info
-      class="mb-4"
-      :url="'/flow'"
-      :text="'自分や家族の症状に不安や心配があればまずは電話相談をどうぞ'"
-      :btn-text="'相談の手順を見る'"
-    />
     <v-row class="DataBlock">
       <!--
       <v-col cols="12" md="6" class="DataCard">
@@ -26,14 +20,27 @@
       -->
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          title="陽性患者数"
+          title="陽性患者が確認された件数"
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
           :chart-data="patientsGraph"
           :date="Data.patients.date"
-          :unit="'人'"
+          :unit="'件'"
           :url="
-            'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'
+          "
+        />
+      </v-col>
+      <v-col cols="12" md="6" class="DataCard">
+        <time-bar-chart
+          title="検査実施数"
+          :title-id="'number-of-tested-cases'"
+          :chart-id="'time-bar-chart-tested'"
+          :chart-data="inspectionsGraph"
+          :date="Data.inspections_summary.date"
+          :unit="'件'"
+          :url="
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00005.htm'
           "
         />
       </v-col>
@@ -46,22 +53,11 @@
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
           :url="
-            'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'
           "
         />
       </v-col>
-      <v-col cols="12" md="6" class="DataCard">
-        <time-stacked-bar-chart
-          title="検査実施数"
-          :title-id="'number-of-tested'"
-          :chart-id="'time-stacked-bar-chart-inspections'"
-          :chart-data="inspectionsGraph"
-          :date="Data.inspections_summary.date"
-          :items="inspectionsItems"
-          :labels="inspectionsLabels"
-          :unit="'件'"
-        />
-      </v-col>
+      <!--
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="新型コロナコールセンター相談件数"
@@ -84,7 +80,6 @@
           :url="''"
         />
       </v-col>
-      <!--
       <v-col cols="12" md="6" class="DataCard">
         <metro-bar-chart
           title="都営地下鉄の利用者数の推移"
@@ -104,7 +99,7 @@
 import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 import MetroBarChart from '@/components/MetroBarChart.vue'
-import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
+//import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
@@ -122,7 +117,6 @@ export default {
     PageHeader,
     TimeBarChart,
     MetroBarChart,
-    TimeStackedBarChart,
     WhatsNew,
     StaticInfo,
     DataTable,
@@ -135,24 +129,29 @@ export default {
     // 感染者数
     const patientsTable = formatTable(Data.patients.data)
     // 退院者グラフ
-    const dischargesGraph = formatGraph(Data.discharges_summary.data)
+    //const dischargesGraph = formatGraph(Data.discharges_summary.data)
 
     // 相談件数
-    const contactsGraph = formatGraph(Data.contacts.data)
+    //const contactsGraph = formatGraph(Data.contacts.data)
     // 帰国者・接触者電話相談センター相談件数
-    const querentsGraph = formatGraph(Data.querents.data)
+    //const querentsGraph = formatGraph(Data.querents.data)
     // 都営地下鉄の利用者数の推移
-    const metroGraph = MetroData
+    //const metroGraph = MetroData
     // 検査実施日別状況
-    const inspectionsGraph = [
+    /* const inspectionsGraph = [
       Data.inspections_summary.data['県内'],
       Data.inspections_summary.data['その他']
     ]
-    const inspectionsItems = [
-      '都内発生（疑い例・接触者調査）',
+    */
+
+   const inspectionsGraph = formatGraph(Data.inspections_summary.data)
+
+    /* const inspectionsItems = [
+      '県内発生（疑い例・接触者調査）',
       'その他（チャーター便・クルーズ便）'
     ]
-    const inspectionsLabels = Data.inspections_summary.labels
+    */
+    //const inspectionsLabels = Data.inspections_summary.labels
     // 死亡者数
     // #MEMO: 今後使う可能性あるので一時コメントアウト
     // const fatalitiesTable = formatTable(
@@ -165,7 +164,7 @@ export default {
       lText: patientsGraph[
         patientsGraph.length - 1
       ].cumulative.toLocaleString(),
-      sText: patientsGraph[patientsGraph.length - 1].label + 'の累計',
+      sText: patientsGraph[patientsGraph.length - 1].label + 'までの累計',
       unit: '人'
     }
 
@@ -173,13 +172,13 @@ export default {
       Data,
       patientsTable,
       patientsGraph,
-      dischargesGraph,
-      contactsGraph,
-      querentsGraph,
-      metroGraph,
+      //dischargesGraph,
+      //contactsGraph,
+      //querentsGraph,
+      //metroGraph,
       inspectionsGraph,
-      inspectionsItems,
-      inspectionsLabels,
+      //inspectionsItems,
+      //inspectionsLabels,
       //confirmedCases,
       sumInfoOfPatients,
       headerItem: {
@@ -188,7 +187,7 @@ export default {
         date: Data.lastUpdate
       },
       newsItems: News.newsItems,
-      metroGraphOption: {
+      /* metroGraphOption: {
         responsive: true,
         legend: {
           display: true
@@ -224,7 +223,7 @@ export default {
               }
             }
           ]
-        },
+        }, */
         tooltips: {
           displayColors: false,
           callbacks: {
@@ -240,7 +239,7 @@ export default {
             }
           }
         }
-      }
+    //  }
     }
     return data
   },

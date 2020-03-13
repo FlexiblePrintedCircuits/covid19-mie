@@ -30,7 +30,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp'
+        content: 'https://covid19-mie.netlify.com/'
       },
       {
         hid: 'og:title',
@@ -46,7 +46,7 @@ const config: Configuration = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp/ogp.png'
+        content: 'https://covid19-mie.netlify.com/ogp.png'
       },
       {
         hid: 'twitter:card',
@@ -56,17 +56,17 @@ const config: Configuration = {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@tokyo_bousai'
+        content: '@FPC_COMMUNITY'
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@tokyo_bousai'
+        content: '@FPC_COMMUNITY'
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp/ogp.png'
+        content: 'https://covid19-mie.netlify.com/ogp.png'
       }
     ],
     link: [
@@ -150,7 +150,7 @@ const config: Configuration = {
     }
   },
   googleAnalytics: {
-    id: 'UA-159417676-1'
+    id: 'UA-160613146-1'
   },
   build: {
     postcss: {
@@ -174,7 +174,7 @@ const config: Configuration = {
   },
   manifest: {
     name: '三重県 新型コロナウイルス感染症 情報まとめサイト',
-    theme_color: '#FF4F02',
+    theme_color: '#ff8d5b',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',

@@ -2,7 +2,7 @@
   <v-app class="app">
     <div v-if="loading" class="loader">
       <img src="/logo.png" alt="三重県" />
-      <scale-loader color="#FF4F02" />
+      <scale-loader color="#ff8d5b" />
     </div>
     <div v-else class="appContainer">
       <div class="naviContainer">
@@ -61,7 +61,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`
+          href: `https://covid19-mie.netlify.com${this.$route.path}`
         }
       ]
     }

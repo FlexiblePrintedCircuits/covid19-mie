@@ -102,7 +102,7 @@ export default {
         },
         {
           title: this.$t('Ivents Info'),
-          link: 'https://www.pref.mie.lg.jp/common/content/000877667.pdf'
+          link: 'https://www.pref.mie.lg.jp/KI2KANRI/HP/m0101300022.htm'
         },
         {
           title: this.$t('Facility Info'),

@@ -27,7 +27,7 @@
           :date="Data.patients.date"
           :unit="'件'"
           :url="
-            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm'
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'
           "
         />
       </v-col>
@@ -53,7 +53,7 @@
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
           :url="
-            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm'
+            'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'
           "
         />
       </v-col>

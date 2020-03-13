@@ -34,8 +34,8 @@
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="検査実施数"
-          :title-id="'number-of-tested'"
-          :chart-id="'time-bar-chart-inspections'"
+          :title-id="'number-of-tested-cases'"
+          :chart-id="'time-bar-chart-tested'"
           :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
           :unit="'件'"
@@ -99,7 +99,7 @@
 import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 import MetroBarChart from '@/components/MetroBarChart.vue'
-import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
+//import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
@@ -117,7 +117,6 @@ export default {
     PageHeader,
     TimeBarChart,
     MetroBarChart,
-    TimeStackedBarChart,
     WhatsNew,
     StaticInfo,
     DataTable,
@@ -145,7 +144,7 @@ export default {
     ]
     */
 
-   const inspectionsGraph = Data.inspections_summary.data
+   const inspectionsGraph = formatGraph(Data.inspections_summary.data)
 
     /* const inspectionsItems = [
       '県内発生（疑い例・接触者調査）',

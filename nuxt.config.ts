@@ -51,17 +51,17 @@ const config: Configuration = {
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'https://covid19-mie.netlify.com/ogp.png'
+        content: 'summary_large_image'
       },
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: 'https://covid19-mie.netlify.com/ogp.png'
+        content: '@FPC_COMMUNITY'
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: 'https://covid19-mie.netlify.com/ogp.png'
+        content: '@FPC_COMMUNITY'
       },
       {
         hid: 'twitter:image',

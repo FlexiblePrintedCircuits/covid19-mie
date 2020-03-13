@@ -30,7 +30,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://peaceful-bardeen-317b48.netlify.com/'
+        content: 'https://covid19-mie.netlify.com/'
       },
       {
         hid: 'og:title',

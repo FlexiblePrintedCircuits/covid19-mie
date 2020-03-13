@@ -47,7 +47,7 @@
     "Navi Open": "サイドメニュー項目を開く",
     "Navi Close": "サイドメニュー項目を閉じる",
     "COVID-19": "新型コロナウイルス感染症",
-    "Measures site": "対策サイト",
+    "Measures site": "対策サイト（非公式）",
     "MiePrefecture": "三重県",
     "Tokyo COVID-19 Task Force": "新型コロナウイルス感染症対策本部",
     "The latest updates": "県内の最新感染動向",

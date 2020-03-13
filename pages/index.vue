@@ -164,7 +164,7 @@ export default {
       lText: patientsGraph[
         patientsGraph.length - 1
       ].cumulative.toLocaleString(),
-      sText: patientsGraph[patientsGraph.length - 1].label + 'の累計',
+      sText: patientsGraph[patientsGraph.length - 1].label + 'までの累計',
       unit: '人'
     }
 

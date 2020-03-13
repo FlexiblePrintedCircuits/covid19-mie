@@ -30,7 +30,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp'
+        content: 'https://peaceful-bardeen-317b48.netlify.com/'
       },
       {
         hid: 'og:title',
@@ -46,7 +46,7 @@ const config: Configuration = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp/ogp.png'
+        content: 'https://peaceful-bardeen-317b48.netlify.com/ogp.png'
       },
       {
         hid: 'twitter:card',
@@ -66,7 +66,7 @@ const config: Configuration = {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp/ogp.png'
+        content: 'https://peaceful-bardeen-317b48.netlify.com/ogp.png'
       }
     ],
     link: [
@@ -174,7 +174,7 @@ const config: Configuration = {
   },
   manifest: {
     name: '三重県 新型コロナウイルス感染症 情報まとめサイト',
-    theme_color: '#FF4F02',
+    theme_color: '#ff8d5b',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',

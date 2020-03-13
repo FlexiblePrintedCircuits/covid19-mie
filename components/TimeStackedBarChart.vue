@@ -1,5 +1,5 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date">
+  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
     <template v-slot:button>
       <p class="Graph-Desc">
         （注）同一の対象者について複数の検体を調査する場合あり
@@ -69,6 +69,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    url: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data() {
@@ -92,7 +97,7 @@ export default {
       }
     },
     displayData() {
-      const colorArray = ['#FF4F02', '#FF4500']
+      const colorArray = ['#ff8d5b', '#fcb190']
       if (this.dataKind === 'transition') {
         return {
           labels: this.labels,

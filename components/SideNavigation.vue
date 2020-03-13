@@ -51,13 +51,14 @@
     "MiePrefecture": "三重県",
     "Tokyo COVID-19 Task Force": "新型コロナウイルス感染症対策本部",
     "The latest updates": "県内の最新感染動向",
-    "If you have any symptoms": "新型コロナウイルス感染症が心配なときに",
     "for Families with children": "お子様をお持ちの皆様へ",
     "for Citizens": "県民の皆様へ",
     "for Enterprises and Employees": "企業の皆様・はたらく皆様へ",
     "Government official website": "三重県公式ホームページ",
     "Message from Governor Suzuki": "知事からのメッセージ",
-    "About us": "当サイトについて"
+    "About us": "当サイトについて",
+    "Ivents Info": "新型コロナウイルス感染症に係る県主催イベントの中止・延期情報",
+    "Facility Info": "新型コロナウイルス感染症に係る県有施設の休館情報"
   }
 }
 </i18n>
@@ -84,12 +85,6 @@ export default {
           link: '/'
         },
         {
-          icon: 'covid',
-          title: this.$t('If you have any symptoms'),
-          link: '/flow',
-          divider: true
-        },
-        {
           icon: 'parent',
           title: this.$t('for Families with children'),
           link: '/parent'
@@ -97,7 +92,7 @@ export default {
         {
           icon: 'mdi-account-multiple',
           title: this.$t('for Citizens'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm'
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#006'
         },
         {
           icon: 'mdi-domain',
@@ -106,8 +101,16 @@ export default {
           divider: true
         },
         {
+          title: this.$t('Ivents Info'),
+          link: 'https://www.pref.mie.lg.jp/common/content/000877667.pdf'
+        },
+        {
+          title: this.$t('Facility Info'),
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00004.htm'
+        },
+        {
           title: this.$t('Message from Governor Suzuki'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00005.htm'
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00006.htm'
         },
         {
           title: this.$t('About us'),

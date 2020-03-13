@@ -32,14 +32,12 @@
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
-        <time-stacked-bar-chart
+        <time-bar-chart
           title="検査実施数"
           :title-id="'number-of-tested'"
-          :chart-id="'time-stacked-bar-chart-inspections'"
+          :chart-id="'time-bar-chart-inspections'"
           :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
-          :items="inspectionsItems"
-          :labels="inspectionsLabels"
           :unit="'件'"
           :url="
             'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00005.htm'
@@ -141,16 +139,20 @@ export default {
     // 都営地下鉄の利用者数の推移
     //const metroGraph = MetroData
     // 検査実施日別状況
-    const inspectionsGraph = [
+    /* const inspectionsGraph = [
       Data.inspections_summary.data['県内'],
       Data.inspections_summary.data['その他']
     ]
+    */
 
-    const inspectionsItems = [
+   const inspectionsGraph = Data.inspections_summary.data
+
+    /* const inspectionsItems = [
       '県内発生（疑い例・接触者調査）',
       'その他（チャーター便・クルーズ便）'
     ]
-    const inspectionsLabels = Data.inspections_summary.labels
+    */
+    //const inspectionsLabels = Data.inspections_summary.labels
     // 死亡者数
     // #MEMO: 今後使う可能性あるので一時コメントアウト
     // const fatalitiesTable = formatTable(
@@ -176,8 +178,8 @@ export default {
       //querentsGraph,
       //metroGraph,
       inspectionsGraph,
-      inspectionsItems,
-      inspectionsLabels,
+      //inspectionsItems,
+      //inspectionsLabels,
       //confirmedCases,
       sumInfoOfPatients,
       headerItem: {

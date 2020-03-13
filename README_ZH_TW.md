@@ -1,10 +1,9 @@
 # 東京都 新型冠狀病毒疫情中心
 
-![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
 
 [![三重縣 新型冠狀病毒疫情中心](https://user-images.githubusercontent.com/47916753/76599982-6f25fd00-6549-11ea-9fcb-87034c0b68a5.png)](https://covid19-mie.netlify.com/)
 
-### [日本語](./README.md) | [English](./README_EN.md) | [Spanish](./README_ES.md) | [Korean](./README_KO.md) | Chinese (Taiwan)
+### [日本語](./README.md) | [English](./README_EN.md) | [Spanish](./README_ES.md) | [Korean](./README_KO.md) | Chinese (Taiwan) | [Chinese (Simplified)](./README_ZH_CN.md)
 
 ## 如何貢獻
 如果您能對 Issus 中做出各式各樣的修正協助，我們將不勝感激。

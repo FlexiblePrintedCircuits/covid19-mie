@@ -1,6 +1,5 @@
-# 东京都 新型冠状病毒对策网
+# 三重县 新型冠状病毒对策网
 
-![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
 
 [![三重县 新型冠状病毒对策网](https://user-images.githubusercontent.com/47916753/76599982-6f25fd00-6549-11ea-9fcb-87034c0b68a5.png)](https://covid19-mie.netlify.com/)
 

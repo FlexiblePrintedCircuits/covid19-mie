@@ -40,5 +40,6 @@ $ docker-compose up --build
 ### Implementación en entornos de preparación y producción
 
 Cuando se actualiza la rama `master`, los archivos HTML se construirán automáticamente en la rama de `production`,
-y luego el sitio de producción (https://covid19-mie.netlify.com/) también se actualizará.
-
+y luego el sitio de producción (https://covid19-mie.netlify.com/) también se actualizará.  
+Cuando se actualiza la rama `develop`, los archivos HTML se construirán automáticamente en la rama de `dev_pages`,
+y luego el sitio de producción (https://covid19-mie-dev.netlify.com/ ) también se actualizará.

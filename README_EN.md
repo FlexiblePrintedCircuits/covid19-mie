@@ -40,10 +40,7 @@ $ docker-compose up --build
 ### Deployment to Staging & Production Environments
 
 When `master` branch is updated, the HTML files will be automatically built onto `production` branch,
-and then the production site (https://stopcovid19.metro.tokyo.lg.jp/) will be also updated.
+and then the production site (https://covid19-mie.netlify.com/) will be also updated.  
+When `develop` branch is updated, the HTML files will be automatically built onto `dev_pages` branch,
+and then the production site (https://covid19-mie-dev.netlify.com/) will be also updated.  
 
-When `staging` branch is updated, the HTML files will be automatically built onto `gh-pages` branch,
-and then the staging site (https://stg-covid19-tokyo.netlify.com/) will be also updated.
-
-When `development` branch is updated, the HTML files will be automatically built onto `dev-pages` branch,
-and then the development site (https://dev-covid19-tokyo.netlify.com/) will be also updated.

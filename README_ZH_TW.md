@@ -40,5 +40,6 @@ $ docker-compose up --build
 
 ### Deploy 到 Staging環境以及正式環境的方法
 
-當 `master` 分支被更新時，HTML 檔案將會在 `production` 分支中被組建 (build)起來。然後正式版網站 https://covid19-mie.netlify.com/ 會被更新。
+當 `master` 分支被更新時，HTML 檔案將會在 `production` 分支中被組建 (build)起來。然後正式版網站 https://covid19-mie.netlify.com/ 會被更新。  
+當 `develop` 分支被更新時，HTML 檔案將會在 `dev_pages` 分支中被組建 (build)起來。然後正式版網站 https://covid19-mie-dev.netlify.com/ 會被更新。
 

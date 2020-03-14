@@ -86,7 +86,13 @@
       <br />
       当サイトに掲載されている情報は、予告なしに変更又は削除することがあります。
     </TextCard>
-
+    <TextCard title="ソースコードについて">
+      本サイトのソースコードはMITライセンスで公開されており、誰でも自由に利用することができます。詳しくは、
+      <a href="//github.com/FlexiblePrintedCircuits/covid19-mie">
+        GitHub リポジトリ
+      </a>
+      をご確認ください。
+    </TextCard>
     <TextCard title="お問い合わせ先（開発チームの連絡先です）">
       三重県 新型コロナウイルス感染症 対策サイト 開発チーム<br />
       メール

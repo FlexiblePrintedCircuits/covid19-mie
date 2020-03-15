@@ -1,14 +1,19 @@
 {
     "newsItems": [
-    {
-        "date": "2020/03/12",
-        "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00006.htm",
-        "text": "新型コロナウイルス感染症に関する知事から県民へのメッセージ（３月１２日）"
-    },
-    {
-        "date": "2020/03/12",
-        "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00014.htm",
-        "text": "新型コロナウイルス感染症患者の発生について（２例目）"
-    }
+        {
+            "date": "2020/03/14",
+            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm",
+            "text": "新型コロナウイルス感染症について（最新情報はこちら）"
+        },
+        {
+            "date": "2020/03/13",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0030100039.htm",
+            "text": "新型コロナウイルス感染症に関する三重県緊急経済対策"
+        },
+        {
+            "date": "2020/03/13",
+            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00006.htm",
+            "text": "新型コロナウイルス感染症に関する知事から県民へのメッセージ（３月１２日）"
+        }
     ]
 }

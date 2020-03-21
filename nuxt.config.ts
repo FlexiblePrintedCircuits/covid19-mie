@@ -116,24 +116,7 @@ const config: Configuration = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    [
-      'nuxt-i18n',
-      {
-        strategy: 'no_prefix',
-        locales: [
-          {
-            code: 'ja',
-            iso: 'ja-JP'
-          }
-        ],
-        defaultLocale: 'ja',
-        vueI18n: {
-          fallbackLocale: 'ja',
-          formatFallbackMessages: true
-        },
-        vueI18nLoader: true
-      }
-    ],
+    [ 'nuxt-i18n', i18n],
     'nuxt-svg-loader',
     'nuxt-purgecss',
     ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }]
@@ -186,7 +169,37 @@ const config: Configuration = {
     splash_pages: null
   },
   generate: {
-    fallback: true
+    fallback: true,
+    routes() {
+      const locales = ['ja', 'en', 'zh-cn', 'zh-tw', 'ko', 'ja-basic']
+      const pages = [
+        '/cards/details-of-confirmed-cases',
+        '/cards/details-of-tested-cases',
+        '/cards/number-of-confirmed-cases',
+        '/cards/attributes-of-confirmed-cases',
+        '/cards/number-of-tested',
+        '/cards/number-of-inspection-persons',
+        '/cards/number-of-reports-to-covid19-telephone-advisory-center',
+        '/cards/number-of-reports-to-covid19-consultation-desk',
+        '/cards/predicted-number-of-toei-subway-passengers',
+        '/cards/agency',
+        '/cards/shinjuku-visitors',
+        '/cards/chiyoda-visitors'
+      ]
+
+      const routes: string[] = []
+      locales.forEach(locale => {
+        pages.forEach(page => {
+          if (locale === 'ja') {
+            routes.push(page)
+            return
+          }
+          const route = `/${locale}${page}`
+          routes.push(route)
+        })
+      })
+      return routes
+    }
   },
   // /*
   // ** hot read configuration for docker

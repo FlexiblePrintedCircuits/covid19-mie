@@ -1,6 +1,6 @@
 # Sitio web del Grupo de trabajo COVID-19 de Mie
 
-[![Mie COVID-19 Task Force website](https://user-images.githubusercontent.com/47916753/76599982-6f25fd00-6549-11ea-9fcb-87034c0b68a5.png)](https://covid19-mie.netlify.com/)
+[![Mie COVID-19 Task Force website](https://user-images.githubusercontent.com/47916753/76599982-6f25fd00-6549-11ea-9fcb-87034c0b68a5.png)](https://mie.stopcovid19.jp)
 
 ### [日本語](./README.md) | [English](./README_EN.md) | Spanish | [Korean](./README_KO.md) | [Chinese (Taiwan)](./README_ZH_TW.md) | [Chinese (Simplified)](./README_ZH_CN.md)
 
@@ -40,6 +40,6 @@ $ docker-compose up --build
 ### Implementación en entornos de preparación y producción
 
 Cuando se actualiza la rama `master`, los archivos HTML se construirán automáticamente en la rama de `production`,
-y luego el sitio de producción (https://covid19-mie.netlify.com/) también se actualizará.  
+y luego el sitio de producción (https://mie.stopcovid19.jp) también se actualizará.  
 Cuando se actualiza la rama `develop`, los archivos HTML se construirán automáticamente en la rama de `dev_pages`,
 y luego el sitio de producción (https://covid19-mie-dev.netlify.com/ ) también se actualizará.

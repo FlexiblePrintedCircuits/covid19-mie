@@ -1,6 +1,6 @@
 # 미에현 코로나19 대책 사이트
 
-[![미에현 코로나19 대책 사이트](https://user-images.githubusercontent.com/47916753/76599982-6f25fd00-6549-11ea-9fcb-87034c0b68a5.png)](https://covid19-mie.netlify.com/)
+[![미에현 코로나19 대책 사이트](https://user-images.githubusercontent.com/47916753/76599982-6f25fd00-6549-11ea-9fcb-87034c0b68a5.png)](https://mie.stopcovid19.jp)
 
 ### [日本語](./README.md) | [English](./README_EN.md) | [Spanish](./README_ES.md) | Korean | [Chinese (Taiwan)](./README_ZH_TW.md) | [Chinese (Simplified)](./README_ZH_CN.md)
 
@@ -40,5 +40,5 @@ $ docker-compose up --build
 
 ### 스테이징 환경 및 운영 환경으로 반영 방법
 
-`master` 브랜치가 업데이트되면, 자동적으로  `production` 브랜치의 HTML 파일이 빌드됩니다. 이후, 운영 환경 사이트 https://covid19-mie.netlify.com/ 가 갱신됩니다.  
+`master` 브랜치가 업데이트되면, 자동적으로  `production` 브랜치의 HTML 파일이 빌드됩니다. 이후, 운영 환경 사이트 https://mie.stopcovid19.jp 가 갱신됩니다.  
 `develop` 브랜치가 업데이트되면, 자동적으로  `dev_pages` 브랜치의 HTML 파일이 빌드됩니다. 이후, 운영 환경 사이트 https://covid19-mie-dev.netlify.com/  가 갱신됩니다.  

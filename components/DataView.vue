@@ -46,6 +46,7 @@ export default class DataView extends Vue {
   @Prop() private date!: string
   @Prop() private url!: string
   @Prop() private info!: any // FIXME expect info as {lText:string, sText:string unit:string}
+  @Prop() private show!: boolean
 
   formattedDate: string = convertDatetimeToISO8601Format(this.date)
 }

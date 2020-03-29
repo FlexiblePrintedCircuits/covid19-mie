@@ -27,7 +27,6 @@
           :date="Data.patients.date"
           :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'"
-          :show="true"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
@@ -39,7 +38,6 @@
           :date="Data.inspections_summary.date"
           :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00005.htm'"
-          :show="true"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">

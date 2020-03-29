@@ -58,7 +58,8 @@
     "Message from Governor Suzuki": "知事からのメッセージ",
     "About us": "当サイトについて",
     "Ivents Info": "新型コロナウイルス感染症に係る県主催イベントの中止・延期情報",
-    "Facility Info": "新型コロナウイルス感染症に係る県有施設の休館情報"
+    "Facility Info": "新型コロナウイルス感染症に係る県有施設の休館情報",
+    "Other local government sites":"他自治体の対策サイト"
   }
 }
 </i18n>
@@ -119,6 +120,12 @@ export default {
         {
           title: this.$t('Government official website'),
           link: 'https://www.pref.mie.lg.jp/',
+          divider: true
+        },
+        {
+          title: this.$t('Other local government sites'),
+          link:
+            'https://github.com/tokyo-metropolitan-gov/covid19/blob/development/FORKED_SITES.md#readme',
           divider: true
         }
       ]

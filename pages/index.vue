@@ -172,15 +172,7 @@ export default {
       ].cumulative.toLocaleString(),
       sText: patientsGraph[patientsGraph.length - 1].label + 'までの累計',
       unit: '人'
-    } // 追加、現在の陽性患者数のグラフに必要なやつ
-
-    /* const nowsumInfoOfPatients = {
-      lText: nowpatientsGraph[
-        nowpatientsGraph.length - 1
-      ].cumulative.toLocaleString(),
-      sText: nowpatientsGraph[nowpatientsGraph.length - 1].label + 'までの累計',
-      unit: '人'
-    } */
+    }
 
     const data = {
       Data,
@@ -197,8 +189,7 @@ export default {
       // inspectionsLabels,
       // confirmedCases,
       sumInfoOfPatients,
-      // 追加、現在の陽性患者数のグラフに必要なやつ
-      // nowsumInfoOfPatients,
+
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: '三重県内の最新感染動向',

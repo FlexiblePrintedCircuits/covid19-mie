@@ -47,7 +47,7 @@
           :chart-id="'time-bar-chart-nowpatients'"
           :chart-data="nowpatientsGraph"
           :date="Data.nowinfectedperson.date"
-          :unit="'件'"
+          :unit="'人'"
           :show="false"
         />
       </v-col>

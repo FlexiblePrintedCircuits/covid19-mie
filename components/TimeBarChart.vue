@@ -19,7 +19,7 @@
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
-        :unit="displayInfo.unit"
+        :unit="unit"
       />
     </template>
   </data-view>
@@ -63,7 +63,7 @@ export default {
     unit: {
       type: String,
       required: false,
-      default: ''
+      default: '人'
     },
     url: {
       type: String,

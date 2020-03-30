@@ -1,6 +1,12 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
-    <template v-slot:button>
+  <data-view
+    :title="title"
+    :title-id="titleId"
+    :date="date"
+    :url="url"
+    :show="show"
+  >
+    <template v-if="show" v-slot:button>
       <data-selector v-model="dataKind" />
     </template>
     <bar
@@ -13,7 +19,7 @@
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
-        :unit="displayInfo.unit"
+        :unit="unit"
       />
     </template>
   </data-view>
@@ -57,12 +63,17 @@ export default {
     unit: {
       type: String,
       required: false,
-      default: ''
+      default: '人'
     },
     url: {
       type: String,
       required: false,
       default: ''
+    },
+    show: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data() {

@@ -61,7 +61,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://covid19-mie.netlify.com${this.$route.path}`
+          href: `https://mie.stopcovid19.jp${this.$route.path}`
         }
       ]
     }

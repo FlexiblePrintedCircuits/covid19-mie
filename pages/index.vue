@@ -42,7 +42,7 @@
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          title="現在の陽性患者数"
+          title="日別の陽性患者数"
           :title-id="'nownumber-of-confirmed-cases'"
           :chart-id="'time-bar-chart-nowpatients'"
           :chart-data="nowpatientsGraph"

@@ -1,6 +1,9 @@
 import { Configuration } from '@nuxt/types'
+const path = require('path')
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
+
+const DOMAIN_URL = 'https://mie.stopcovid19.jp'
 
 const config: Configuration = {
   mode: 'universal',
@@ -30,7 +33,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://covid19-mie.netlify.com/'
+        content: DOMAIN_URL
       },
       {
         hid: 'og:title',
@@ -46,7 +49,7 @@ const config: Configuration = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://covid19-mie.netlify.com/ogp.png'
+        content: path.join(DOMAIN_URL, 'ogp.png')
       },
       {
         hid: 'twitter:card',
@@ -66,7 +69,7 @@ const config: Configuration = {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://covid19-mie.netlify.com/ogp.png'
+        content: path.join(DOMAIN_URL, 'ogp.png')
       }
     ],
     link: [

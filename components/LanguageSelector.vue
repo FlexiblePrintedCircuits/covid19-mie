@@ -1,7 +1,7 @@
 <template>
   <div class="SelectLanguage">
     <div class="SelectLanguage-Menu">
-      <select v-model="currentLocaleCode" @change="navigate()">
+      <select v-model="currentLocaleCode" @change="handleChangeLanguage()">
         <option
           v-for="locale in $i18n.locales"
           :key="locale.code"
@@ -27,24 +27,9 @@ import SelectMenuIcon from '@/static/selectmenu.svg'
 })
 export default class LanguageSelector extends Vue {
   currentLocaleCode: string = this.$root.$i18n.locale
-  navigate() {
-    // @fixme 型が・・・
-    // const langs = this.$i18n.locales.filter() ...
-    /* const langs = ['ja', 'en', 'zh-cn', 'zh-tw', 'ko', 'ja-basic']
-    const pathes = this.$router.currentRoute.path.split('/').filter(path => {
-      return langs.includes(path) ? undefined : path
-    })
-    if (pathes.length <= 0) {
-      this.$router.push(locale === 'ja' ? '/' : '/' + locale)
-      return
-    }
-    const url =
-      locale === 'ja'
-        ? '/' + pathes.join('/')
-        : '/' + locale + '/' + pathes.join('/')
-    this.$router.push(url) */
-    // TODO: 下の実装で問題なければ上のコメントを削除する
-    this.$root.$i18n.setLocale(this.currentLocaleCode)
+  handleChangeLanguage() {
+      console.log(this.currentLocaleCode)
+      this.$root.$i18n.setLocale(this.currentLocaleCode)
   }
 }
 </script>

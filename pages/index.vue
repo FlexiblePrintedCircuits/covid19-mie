@@ -99,7 +99,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 // import MetroBarChart from '@/components/MetroBarChart.vue'
@@ -134,6 +134,21 @@ export default {
     const patientsGraph = formatGraph(Data.patients_summary.data)
     // 感染者数
     const patientsTable = formatTable(Data.patients.data)
+    for (const header of patientsTable.headers) {
+      header.text =
+        header.value === '退院' ? this.$t('退院※') : this.$t(header.value)
+    }
+    for (const row of patientsTable.datasets) {
+      row['居住地'] = this.getTranslatedWording(row['居住地'])
+      row['性別'] = this.getTranslatedWording(row['性別'])
+      row['退院'] = this.getTranslatedWording(row['退院'])
+      if (row['年代'].substr(-1, 1) === '代') {
+        const age = row['年代'].substring(0, 2)
+        row['年代'] = this.$t('{age}代', { age })
+      } else {
+        row['年代'] = this.$t(row['年代'])
+      }
+    }
     // 退院者グラフ
     // const dischargesGraph = formatGraph(Data.discharges_summary.data)
 
@@ -252,9 +267,21 @@ export default {
     }
     return data
   },
-  head(): MetaInfo{
+  methods: {
+    getTranslatedWording(value) {
+      if (value === '-' || value === '‐' || value == null) {
+        // 翻訳しようとしている文字列が以下のいずれかだった場合、翻訳しない
+        // - 全角のハイフン
+        // - 半角のハイフン
+        // - null
+        return value
+      }
+      return this.$t(value)
+    }
+  },
+  head() {
     return {
-      title: this.$t('三重県内の最新感染動向') as string
+      title: this.$t('三重県内の最新感染動向')
     }
   }
 }

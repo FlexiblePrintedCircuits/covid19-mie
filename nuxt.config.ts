@@ -1,5 +1,4 @@
 import { Configuration } from '@nuxt/types'
-import i18n from './nuxt-i18n.config'
 const path = require('path')
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')

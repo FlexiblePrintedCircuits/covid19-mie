@@ -18,7 +18,7 @@
       <slot />
     </v-card-text>
     <v-footer class="DataView-Footer">
-      <time :datetime="formattedDate">{{ date }} {{ $t('時点') }}</time>
+      <time :datetime="formattedDate">{{ date }} 時点</time>
       <a
         v-if="url"
         class="OpenDataLink"
@@ -26,7 +26,7 @@
         target="_blank"
         rel="noopener"
       >
-        {{ $t('出典：三重県Webサイト') }}
+        出典：三重県Webサイト
         <v-icon class="ExternalLinkIcon" size="15">
           mdi-open-in-new
         </v-icon>

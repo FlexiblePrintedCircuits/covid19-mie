@@ -3,17 +3,17 @@
     <div class="SideNavigation-HeadingContainer sp-flex">
       <v-icon
         class="SideNavigation-HeadingIcon pc-none"
-        :aria-label="$t('サイドメニュー項目を開く')"
+        :aria-label="$t('Navi Open')"
         @click="openNavi"
       >
         mdi-menu
       </v-icon>
       <nuxt-link to="/" class="SideNavigation-HeadingLink">
         <div class="SideNavigation-Logo">
-          <img src="/logo.png" :alt="$t('三重県')" />
+          <img src="/logo.png" :alt="$t('MiePrefecture')" />
         </div>
         <h1 class="SideNavigation-Heading">
-          {{ $t('新型コロナウイルス感染症') }}<br />{{ $t('対策サイト（非公式）') }}
+          {{ $t('COVID-19') }}<br />{{ $t('Measures site') }}
         </h1>
       </nuxt-link>
     </div>
@@ -21,7 +21,7 @@
     <div class="sp-none" :class="{ open: isNaviOpen }">
       <v-icon
         class="SideNavigation-ListContainerIcon pc-none"
-        :aria-label="$t('サイドメニュー項目を閉じる')"
+        :aria-label="$t('Navi Close')"
         @click="closeNavi"
       >
         mdi-close
@@ -87,43 +87,43 @@ export default {
       return [
         {
           icon: 'mdi-chart-timeline-variant',
-          title: this.$t('県内の最新感染動向'),
+          title: this.$t('The latest updates'),
           link: '/'
         },
         {
           icon: 'parent',
-          title: this.$t('お子様をお持ちの皆様へ'),
+          title: this.$t('for Families with children'),
           link: '/parent'
         },
         {
           icon: 'mdi-account-multiple',
-          title: this.$t('県民の皆様へ'),
+          title: this.$t('for Citizens'),
           link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#006'
         },
         {
           icon: 'mdi-domain',
-          title: this.$t('企業の皆様・はたらく皆様へ'),
+          title: this.$t('for Enterprises and Employees'),
           link: '/worker',
           divider: true
         },
         {
-          title: this.$t('新型コロナウイルス感染症に係る県主催イベントの中止・延期情報'),
+          title: this.$t('Ivents Info'),
           link: 'https://www.pref.mie.lg.jp/KI2KANRI/HP/m0101300022.htm'
         },
         {
-          title: this.$t('新型コロナウイルス感染症に係る県有施設の休館情報'),
+          title: this.$t('Facility Info'),
           link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00004.htm'
         },
         {
-          title: this.$t('知事からのメッセージ'),
+          title: this.$t('Message from Governor Suzuki'),
           link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00006.htm'
         },
         {
-          title: this.$t('当サイトについて'),
+          title: this.$t('About us'),
           link: '/about'
         },
         {
-          title: this.$t('三重県公式ホームページ'),
+          title: this.$t('Government official website'),
           link: 'https://www.pref.mie.lg.jp/',
           divider: true
         },

@@ -13,6 +13,14 @@
   </div>
 </template>
 
+<i18n>
+{
+  "ja": {
+    "print": "印刷する"
+  }
+}
+</i18n>
+
 <script>
 import PrinterIcon from '@/static/printer.svg'
 

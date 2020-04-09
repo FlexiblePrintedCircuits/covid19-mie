@@ -19,40 +19,40 @@
 
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          :title="$t('陽性患者が確認された件数')"
+          title="陽性患者が確認された件数"
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
           :chart-data="patientsGraph"
           :date="Data.patients.date"
-          :unit="$t('件.tested')"
+          :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          :title="$t('検査実施数')"
+          title="検査実施数"
           :title-id="'number-of-tested-cases'"
           :chart-id="'time-bar-chart-tested'"
           :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
-          :unit="$t('件.tested')"
+          :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00005.htm'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          :title="$t('日別の陽性患者数')"
+          title="日別の陽性患者数"
           :title-id="'nownumber-of-confirmed-cases'"
           :chart-id="'time-bar-chart-nowpatients'"
           :chart-data="nowpatientsGraph"
           :date="Data.nowinfectedperson.date"
-          :unit="$t('人')"
+          :unit="'人'"
           :show="false"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <data-table
-          :title="$t('陽性患者の属性')"
+          :title="'陽性患者の属性'"
           :title-id="'attributes-of-confirmed-cases'"
           :chart-data="patientsTable"
           :chart-option="{}"
@@ -115,7 +115,6 @@ import formatTable from '@/utils/formatTable'
 import News from '@/data/news.json'
 // import SvgCard from '@/components/SvgCard.vue'
 // import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
-import { MetaInfo } from 'vue-meta'
 
 export default {
   components: {
@@ -134,21 +133,6 @@ export default {
     const patientsGraph = formatGraph(Data.patients_summary.data)
     // 感染者数
     const patientsTable = formatTable(Data.patients.data)
-    for (const header of patientsTable.headers) {
-      header.text =
-        header.value === '退院' ? this.$t('退院※') : this.$t(header.value)
-    }
-    for (const row of patientsTable.datasets) {
-      row['居住地'] = this.getTranslatedWording(row['居住地'])
-      row['性別'] = this.getTranslatedWording(row['性別'])
-      row['退院'] = this.getTranslatedWording(row['退院'])
-      if (row['年代'].substr(-1, 1) === '代') {
-        const age = row['年代'].substring(0, 2)
-        row['年代'] = this.$t('{age}代', { age })
-      } else {
-        row['年代'] = this.$t(row['年代'])
-      }
-    }
     // 退院者グラフ
     // const dischargesGraph = formatGraph(Data.discharges_summary.data)
 
@@ -185,8 +169,8 @@ export default {
       lText: patientsGraph[
         patientsGraph.length - 1
       ].cumulative.toLocaleString(),
-      sText: patientsGraph[patientsGraph.length - 1].label + this.$t('までの累計'),
-      unit: this.$t('人')
+      sText: patientsGraph[patientsGraph.length - 1].label + 'までの累計',
+      unit: '人'
     }
 
     const data = {
@@ -207,7 +191,7 @@ export default {
 
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('三重県内の最新感染動向'),
+        title: '三重県内の最新感染動向',
         date: Data.lastUpdate
       },
       newsItems: News.newsItems
@@ -267,21 +251,9 @@ export default {
     }
     return data
   },
-  methods: {
-    getTranslatedWording(value) {
-      if (value === '-' || value === '‐' || value == null) {
-        // 翻訳しようとしている文字列が以下のいずれかだった場合、翻訳しない
-        // - 全角のハイフン
-        // - 半角のハイフン
-        // - null
-        return value
-      }
-      return this.$t(value)
-    }
-  },
   head() {
     return {
-      title: this.$t('三重県内の最新感染動向')
+      title: '三重県内の最新感染動向'
     }
   }
 }

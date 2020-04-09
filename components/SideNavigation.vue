@@ -88,12 +88,12 @@ export default {
         {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('県内の最新感染動向'),
-          link: this.localePath('/')
+          link: '/'
         },
         {
           icon: 'parent',
           title: this.$t('お子様をお持ちの皆様へ'),
-          link: this.localePath('/parent')
+          link: '/parent'
         },
         {
           icon: 'mdi-account-multiple',
@@ -103,7 +103,7 @@ export default {
         {
           icon: 'mdi-domain',
           title: this.$t('企業の皆様・はたらく皆様へ'),
-          link: this.localePath('/worker'),
+          link: '/worker',
           divider: true
         },
         {
@@ -120,7 +120,7 @@ export default {
         },
         {
           title: this.$t('当サイトについて'),
-          link: this.localePath('/about')
+          link: '/about'
         },
         {
           title: this.$t('三重県公式ホームページ'),

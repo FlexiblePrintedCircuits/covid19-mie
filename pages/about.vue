@@ -9,6 +9,9 @@
           '当サイトは三重県内における新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために、三重県内の高専生チームが開発・開設したものです。'
         )
       }}<br />
+      <br />
+      複製・改変が許されたオープンソースライセンスで公開されている、<a href="https://stopcovid19.metro.tokyo.lg.jp/">東京都 新型コロナウイルス対策サイト</a>の<a href="https://github.com/tokyo-metropolitan-gov/covid19">仕組み</a>を利用しています。
+      <br />
       <i18n path="複製・改変が許されたオープンソースライセンスで公開されている、{covidTokyo}の{githubRepo}を利用しています。">
         <template v-slot:covidTokyo>
           <a

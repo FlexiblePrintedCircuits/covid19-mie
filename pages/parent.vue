@@ -1,7 +1,7 @@
 <template>
   <div class="Parent">
     <h2 class="Parent-Heading">
-      {{ $t('臨時休校中の新型コロナウイルス感染症対応についてのお願い') }}
+      臨時休校中の新型コロナウイルス感染症対応についてのお願い
     </h2>
     <div v-for="(item, i) in items" :key="i">
       <TextCard :title="item.title" :body="item.body" />
@@ -10,7 +10,6 @@
 </template>
 <script lang="ts">
 import TextCard from '@/components/TextCard.vue'
-import { MetaInfo } from 'vue-meta'
 export default {
   components: {
     TextCard
@@ -19,29 +18,25 @@ export default {
     return {
       items: [
         {
-          title: this.$t('1. 感染予防・健康管理'),
+          title: '1. 感染予防・健康管理',
           body:
-            this.$t(
-              '〇　不特定多数の人の集まる場所等への外出を避け、基本的に自宅で過ごしてください。<br />〇　手洗い、咳エチケット等により、感染予防に努めてください。<br />　<a href="https://www.mhlw.go.jp/content/10900000/000593494.pdf" target="_blank" rel="noopener">【参考】手洗いについて - 厚生労働省 （pdfファイル）</a> <br />〇　規則正しい生活を心がけ、日常の健康管理に十分気を付けてください。'
-            )
+            '〇　不特定多数の人の集まる場所等への外出を避け、基本的に自宅で過ごしてください。<br />〇　手洗い、咳エチケット等により、感染予防に努めてください。<br />　<a href="https://www.mhlw.go.jp/content/10900000/000593494.pdf" target="_blank" rel="noopener">【参考】手洗いについて - 厚生労働省 （pdfファイル）</a> <br />〇　規則正しい生活を心がけ、日常の健康管理に十分気を付けてください。'
         },
         {
-          title: this.$t('2. 感染症を疑う場合の対応'),
+          title: '2. 感染症を疑う場合の対応',
           body:
-            this.$t(
-              '〇　風邪の症状や、37.5度以上の発熱が４日以上続いている、強いだるさ（倦怠感）、息苦しさ（呼吸困難）がある場合は、各保健所にご相談ください。<br />〇  「電話相談窓口」（三重県庁医療保健部薬務感染症対策課）<br /><a href="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#007" target="_blank" rel="noopener">https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#007</a>'
-            )
+            '〇　風邪の症状や、37.5度以上の発熱が４日以上続いている、強いだるさ（倦怠感）、息苦しさ（呼吸困難）がある場合は、各保健所にご相談ください。<br />〇  「電話相談窓口」（三重県庁医療保健部薬務感染症対策課）<br /><a href="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#007" target="_blank" rel="noopener">https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#007</a>'
         },
         {
-          title: this.$t('3. その他'),
-          body: this.$t('〇  詳細は、各学校からのお知らせ等をご確認ください。')
+          title: '3. その他',
+          body: '〇  詳細は、各学校からのお知らせ等をご確認ください。'
         }
       ]
     }
   },
-  head() : MetaInfo{
+  head() {
     return {
-      title: this.$t('お子様をお持ちの皆様へ') as string
+      title: 'お子様をお持ちの皆様へ'
     }
   }
 }

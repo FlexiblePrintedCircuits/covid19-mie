@@ -17,7 +17,6 @@
         </h1>
       </nuxt-link>
     </div>
-    <v-divider class="SideNavigation-HeadingDivider" />
     <div class="sp-none" :class="{ open: isNaviOpen }">
       <v-icon
         class="SideNavigation-ListContainerIcon pc-none"
@@ -26,6 +25,10 @@
       >
         mdi-close
       </v-icon>
+      <div class="SideNavigation-LanguageMenu">
+        <LanguageSelector />
+      </div>
+      <v-divider class="SideNavigation-Divider" />
       <v-list :flat="true">
         <v-container
           v-for="(item, i) in items"
@@ -37,9 +40,6 @@
           <v-divider v-show="item.divider" class="SideNavigation-Divider" />
         </v-container>
       </v-list>
-      <div class="SideNavigation-LanguageMenu">
-        <LanguageSelector />
-      </div>
     </div>
   </div>
 </template>
@@ -183,7 +183,7 @@ export default {
     margin: 12px 0;
   }
   &-LanguageMenu {
-    padding: 0 20px 20px;
+    padding: 20px;
     background: #fff;
   }
   &-Footer {

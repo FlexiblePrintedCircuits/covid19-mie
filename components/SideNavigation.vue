@@ -37,9 +37,6 @@
           <v-divider v-show="item.divider" class="SideNavigation-Divider" />
         </v-container>
       </v-list>
-      <div class="SideNavigation-LanguageMenu">
-        <LanguageSelector />
-      </div>
     </div>
   </div>
 </template>
@@ -69,12 +66,10 @@
 
 <script>
 import ListItem from '@/components/ListItem'
-import LanguageSelector from '@/components/LanguageSelector.vue'
 
 export default {
   components: {
-    ListItem,
-    LanguageSelector
+    ListItem
   },
   props: {
     isNaviOpen: {
@@ -204,10 +199,6 @@ export default {
   }
   &-Divider {
     margin: 12px 0;
-  }
-  &-LanguageMenu {
-    padding: 0 20px 20px;
-    background: #fff;
   }
   &-Footer {
     padding: 20px;

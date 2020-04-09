@@ -44,7 +44,7 @@ export default class LanguageSelector extends Vue {
         : '/' + locale + '/' + pathes.join('/')
     this.$router.push(url) */
     // TODO: 下の実装で問題なければ上のコメントを削除する
-    this.$root.$i18n.setLocale(this.currentLocaleCode)
+    //this.$root.$i18n.setLocale(this.currentLocaleCode)
   }
 }
 </script>

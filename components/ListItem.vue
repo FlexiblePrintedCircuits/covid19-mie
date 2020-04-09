@@ -13,18 +13,18 @@
     <v-list-item-action v-if="icon" class="ListItem-IconContainer">
       <v-icon
         v-if="checkIconType(icon) === 'material'"
-        :class="['ListItem-Icon', isActive(link)]"
+        :class="['ListItem-Text', isActive(link)]"
         size="20"
       >
         {{ icon }}
       </v-icon>
       <CovidIcon
         v-else-if="checkIconType(icon) === 'covid'"
-        :class="['ListItem-Icon', isActive(link)]"
+        :class="['ListItem-Text', isActive(link)]"
       />
       <ParentIcon
         v-else-if="checkIconType(icon) === 'parent'"
-        :class="['ListItem-Icon', isActive(link)]"
+        :class="['ListItem-Text', isActive(link)]"
       />
     </v-list-item-action>
     <v-list-item-content class="ListItem-TextContainer">
@@ -75,10 +75,16 @@ export default class ListItem extends Vue {
   }
 
   isActive(link: string): string | undefined {
-    if (link === this.$route.path || `${link}/` === this.$route.path) {
+    console.log("kore" + link + " " + this.$route.path)
+    if (link === this.$route.path || `${link}/` === this.$route.path || link === `${this.$route.path}/`) {
       return 'isActive'
     }
   }
+  // isActive(): boolean {
+  //     return (
+  //       this.link === this.$route.path || `${this.link}/` === this.$route.path
+  //     )
+  // }
 
   checkIconType(
     icon?: string

@@ -96,7 +96,7 @@ export default {
       if (this.dataKind === 'transition') {
         return {
           lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
-          sText: `実績値（前日比：${this.displayTransitionRatio} ${this.unit}）`,
+          sText: `${this.$t('実績値')}（${this.$t('前日比')}：${this.displayTransitionRatio} ${this.unit}）`,
           unit: this.unit
         }
       }
@@ -104,7 +104,7 @@ export default {
         lText: this.chartData[
           this.chartData.length - 1
         ].cumulative.toLocaleString(),
-        sText: `${this.chartData.slice(-1)[0].label} 累計値（前日比：${
+        sText: `${this.chartData.slice(-1)[0].label} ${this.$t('累計値')}（${this.$t('前日比')}：${
           this.displayCumulativeRatio
         } ${this.unit}）`,
         unit: this.unit
@@ -158,7 +158,7 @@ export default {
             title(tooltipItem, data) {
               return data.labels[tooltipItem[0].index].replace(
                 /(\w+)\/(\w+)/,
-                '$1月$2日'
+                '$1/$2'
               )
             }
           }
@@ -219,8 +219,13 @@ export default {
                     'Nov',
                     'Dec'
                   ]
-                  const month = monthStringArry.indexOf(label.split(' ')[0]) + 1
-                  return month + '月'
+                  const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
+                  const year = new Date().getFullYear()
+                  const mdate = new Date(year + '-' + mm + '-1')
+                  let localString = this.$root.$i18n.locale
+                  return mdate.toLocaleString(localString, {
+                    month: 'short'
+                  })
                 }
               },
               type: 'time',

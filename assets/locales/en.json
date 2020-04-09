@@ -82,11 +82,6 @@
 	"件": {
 		"tested": "cases",
 		"reports": "inquiries"
-	},
-	"詳しくは、{githubRepo}をご確認ください。": " For details: please check {githubRepo}.",
-	"GitHub リポジトリ": "the GitHub repository",
-	"複製・改変が許されたオープンソースライセンスで公開されている、{covidTokyo}の{githubRepo}を利用しています。": "複製・改変が許されたオープンソースライセンスで公開されている、{covidTokyo}の{githubRepo}を利用しています。",
-	"東京都 新型コロナウイルス対策サイト": "東京都 新型コロナウイルス対策サイト",
-	"仕組み": "仕組み"
+	}
 
 }

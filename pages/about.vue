@@ -12,39 +12,6 @@
       <br />
       複製・改変が許されたオープンソースライセンスで公開されている、<a href="https://stopcovid19.metro.tokyo.lg.jp/">東京都 新型コロナウイルス対策サイト</a>の<a href="https://github.com/tokyo-metropolitan-gov/covid19">仕組み</a>を利用しています。
       <br />
-      <i18n path="複製・改変が許されたオープンソースライセンスで公開されている、{covidTokyo}の{githubRepo}を利用しています。">
-        <template v-slot:covidTokyo>
-          <a
-            href="https://stopcovid19.metro.tokyo.lg.jp/"
-            target="_blank"
-            rel="noopener"
-          >
-            {{ $t('東京都 新型コロナウイルス対策サイト') }}
-          </a>
-          <v-icon
-            class="ExternalLinkIcon"
-            size="15"
-          >
-            mdi-open-in-new
-          </v-icon>
-        </template>
-        <template v-slot:githubRepo>
-          <a
-            href="//github.com/FlexiblePrintedCircuits/covid19-mie"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('仕組み') }}
-          <v-icon
-            class="ExternalLinkIcon"
-            size="15"
-          >
-            mdi-open-in-new
-          </v-icon>
-          </a>
-        </template>
-      </i18n>
-      <br />
       {{
         $t('三重県による公式情報と客観的な数値をわかりやすく伝えることで、三重県にお住まいの方や、三重県内に拠点を持つ企業の方、三重県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。')
       }}
@@ -152,30 +119,11 @@
       }}
     </TextCard>
     <TextCard :title="$t('ソースコードについて')">
-      <p>
-        {{
-          $t(
-            '当サイトのソースコードはMITライセンスで公開されており、誰でも自由に利用することができます。'
-          )
-        }}
-        <i18n path="詳しくは、{githubRepo}をご確認ください。">
-          <template v-slot:githubRepo>
-            <a
-              href="//github.com/FlexiblePrintedCircuits/covid19-mie"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ $t('GitHub リポジトリ') }}
-            <v-icon
-              class="ExternalLinkIcon"
-              size="15"
-            >
-              mdi-open-in-new
-            </v-icon>
-            </a>
-          </template>
-        </i18n>
-      </p>
+      本サイトのソースコードはMITライセンスで公開されており、誰でも自由に利用することができます。詳しくは、
+      <a href="//github.com/FlexiblePrintedCircuits/covid19-mie">
+        GitHub リポジトリ
+      </a>
+      をご確認ください。
     </TextCard>
     <TextCard :title="$t('お問い合わせ先（開発チームの連絡先です）')">
       {{ $t('三重県 新型コロナウイルス感染症 対策サイト 開発チーム') }}<br />
@@ -220,8 +168,5 @@ export default {
 
 a {
   @include text-link();
-}
-.ExternalLinkIcon {
-  color: $gray-1 !important;
 }
 </style>

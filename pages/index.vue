@@ -19,40 +19,40 @@
 
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          :title="$t('陽性患者が確認された件数')"
+          title="陽性患者が確認された件数"
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
           :chart-data="patientsGraph"
           :date="Data.patients.date"
-          :unit="$t('件.tested')"
+          :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          :title="$t('検査実施数')"
+          title="検査実施数"
           :title-id="'number-of-tested-cases'"
           :chart-id="'time-bar-chart-tested'"
           :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
-          :unit="$t('件.tested')"
+          :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00005.htm'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          :title="$t('日別の陽性患者数')"
+          title="日別の陽性患者数"
           :title-id="'nownumber-of-confirmed-cases'"
           :chart-id="'time-bar-chart-nowpatients'"
           :chart-data="nowpatientsGraph"
           :date="Data.nowinfectedperson.date"
-          :unit="$t('人')"
+          :unit="'人'"
           :show="false"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <data-table
-          :title="$t('陽性患者の属性')"
+          :title="'陽性患者の属性'"
           :title-id="'attributes-of-confirmed-cases'"
           :chart-data="patientsTable"
           :chart-option="{}"
@@ -99,7 +99,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 // import MetroBarChart from '@/components/MetroBarChart.vue'
@@ -115,7 +115,6 @@ import formatTable from '@/utils/formatTable'
 import News from '@/data/news.json'
 // import SvgCard from '@/components/SvgCard.vue'
 // import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
-import { MetaInfo } from 'vue-meta'
 
 export default {
   components: {
@@ -170,8 +169,8 @@ export default {
       lText: patientsGraph[
         patientsGraph.length - 1
       ].cumulative.toLocaleString(),
-      sText: patientsGraph[patientsGraph.length - 1].label + this.$t('までの累計'),
-      unit: this.$t('人')
+      sText: patientsGraph[patientsGraph.length - 1].label + 'までの累計',
+      unit: '人'
     }
 
     const data = {
@@ -192,7 +191,7 @@ export default {
 
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('三重県内の最新感染動向'),
+        title: '三重県内の最新感染動向',
         date: Data.lastUpdate
       },
       newsItems: News.newsItems
@@ -252,9 +251,9 @@ export default {
     }
     return data
   },
-  head(): MetaInfo{
+  head() {
     return {
-      title: this.$t('三重県内の最新感染動向') as string
+      title: '三重県内の最新感染動向'
     }
   }
 }

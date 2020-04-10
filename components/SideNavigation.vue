@@ -37,6 +37,11 @@
           <v-divider v-show="item.divider" class="SideNavigation-Divider" />
         </v-container>
       </v-list>
+      <div class="SideNavigationFooter">
+        <a href="https://www.sakura.ad.jp/">
+          <img src="../static/sakura-image.png" alt="さくらインターネット" />
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +64,8 @@
     "About us": "当サイトについて",
     "Ivents Info": "新型コロナウイルス感染症に係る県主催イベントの中止・延期情報",
     "Facility Info": "新型コロナウイルス感染症に係る県有施設の休館情報",
-    "Other local government sites":"他自治体の対策サイト"
+    "Other local government sites":"他自治体の対策サイト",
+    "Mie Coronavirus Countermeasures Official LINE":"三重県コロナウイルス対策公式LINE"
   }
 }
 </i18n>
@@ -119,14 +125,17 @@ export default {
         },
         {
           title: this.$t('Government official website'),
-          link: 'https://www.pref.mie.lg.jp/',
+          link: 'https://www.pref.mie.lg.jp/'
+        },
+        {
+          title: this.$t('Mie Coronavirus Countermeasures Official LINE'),
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000078.htm',
           divider: true
         },
         {
           title: this.$t('Other local government sites'),
           link:
-            'https://github.com/tokyo-metropolitan-gov/covid19/blob/development/FORKED_SITES.md#readme',
-          divider: true
+            'https://github.com/tokyo-metropolitan-gov/covid19/blob/development/FORKED_SITES.md#readme'
         }
       ]
     },
@@ -222,6 +231,11 @@ export default {
     font-weight: bold;
   }
 }
+.SideNavigationFooter {
+  width: 100%;
+  background-color: white;
+}
+
 .open {
   @include lessThan($small) {
     position: fixed;

@@ -37,7 +37,7 @@
           <v-divider v-show="item.divider" class="SideNavigation-Divider" />
         </v-container>
       </v-list>
-      <div class="SideNavigationFooter">
+      <div class="SideNavigation-HeadingDivider-Footer">
         <a href="https://www.sakura.ad.jp/">
           <img src="../static/sakura-image.png" alt="さくらインターネット" />
         </a>
@@ -205,6 +205,11 @@ export default {
     @include lessThan($small) {
       display: none;
     }
+    &-Footer {
+      width: 100%;
+      background-color: white;
+      margin-bottom: 10px;
+    }
   }
   &-Divider {
     margin: 12px 0;
@@ -231,10 +236,6 @@ export default {
     font-weight: bold;
   }
 }
-.SideNavigationFooter {
-  width: 100%;
-  background-color: white;
-}
 
 .open {
   @include lessThan($small) {
@@ -246,6 +247,7 @@ export default {
     width: 100%;
     z-index: z-index-of(opened-side-navigation);
     background-color: $white;
+    overflow: auto;
   }
 }
 @include largerThan($small) {

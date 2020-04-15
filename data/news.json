@@ -1,14 +1,15 @@
 {
     "newsItems": [
+
         {
-            "date": "2020/04/13",
+            "date": "2020/04/15",
             "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm",
             "text": "新型コロナウイルス感染症について（最新情報はこちら）"
         },
         {
-            "date": "2020/04/11",
-            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00039.htm",
-            "text": "新型コロナウイルス感染症患者の発生について（県内第１７例目）"
+            "date": "2020/04/14",
+            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00042.htm",
+            "text": "新型コロナウイルス感染症患者の発生について（県内第１９例目）"
         },
         {
             "date": "2020/04/10",

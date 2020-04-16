@@ -48,6 +48,7 @@
           :date="Data.nowinfectedperson.date"
           :unit="'人'"
           :show="false"
+          :url="'https://www.pref.mie.lg.jp/common/content/000885854.pdf'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">

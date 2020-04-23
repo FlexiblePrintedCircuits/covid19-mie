@@ -25,7 +25,6 @@
           :chart-data="patientsGraph"
           :date="Data.patients.date"
           :unit="'件'"
-          :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
@@ -36,7 +35,7 @@
           :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
           :unit="'件'"
-          :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00005.htm'"
+          :url="'https://www.pref.mie.lg.jp/IT/HP/87587000001_00002.htm'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
@@ -58,7 +57,7 @@
           :chart-option="{}"
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
-          :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'"
+          :url="'https://www.pref.mie.lg.jp/IT/HP/87587000001_00002.htm'"
         />
       </v-col>
       <!--

@@ -1,19 +1,19 @@
 {
     "newsItems": [
         {
-            "date": "2020/04/22",
+            "date": "2020/04/23",
             "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#016",
             "text": "新型コロナウイルス感染症拡大阻止に向けた「三重県緊急事態措置」～５つのお願い～"
+        },
+        {
+            "date": "2020/04/23",
+            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm",
+            "text": "新型コロナウイルス感染症について（最新情報はこちら）"
         },
         {
             "date": "2020/04/22",
             "url": "https://www.pref.mie.lg.jp/TOPICS/m0001900077.htm",
             "text": "「新型コロナウイルス感染症に関する三重県緊急総合対策」（４月２２日）"
-        },
-        {
-            "date": "2020/04/22",
-            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm",
-            "text": "新型コロナウイルス感染症について（最新情報はこちら）"
         }
     ]
 }

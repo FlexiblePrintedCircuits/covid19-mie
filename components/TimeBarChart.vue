@@ -5,6 +5,7 @@
     :date="date"
     :url="url"
     :show="show"
+    :linktitle="linktitle"
   >
     <template v-if="show" v-slot:button>
       <data-selector v-model="dataKind" />
@@ -74,6 +75,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    linktitle: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data() {

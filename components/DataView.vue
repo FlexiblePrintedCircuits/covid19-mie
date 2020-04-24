@@ -26,7 +26,7 @@
         target="_blank"
         rel="noopener"
       >
-        出典：三重県オープンデータライブラリ
+        出典:{{ linktitle }}
         <v-icon class="ExternalLinkIcon" size="15">
           mdi-open-in-new
         </v-icon>
@@ -46,6 +46,7 @@ export default class DataView extends Vue {
   @Prop() private date!: string
   @Prop() private url!: string
   @Prop() private info!: any // FIXME expect info as {lText:string, sText:string unit:string}
+  @Prop() private linktitle!: string
 
   formattedDate: string = convertDatetimeToISO8601Format(this.date)
 }

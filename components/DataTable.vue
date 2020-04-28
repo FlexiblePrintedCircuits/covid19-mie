@@ -1,5 +1,11 @@
 <template>
-  <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+  <data-view
+    :title="title"
+    :title-id="titleId"
+    :date="date"
+    :url="url"
+    :linktitle="linktitle"
+  >
     <template v-slot:button>
       <span />
     </template>
@@ -102,6 +108,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    linktitle: {
+      type: String,
+      required: false,
+      default: '三重県公式ホームページ'
     }
   }
 }

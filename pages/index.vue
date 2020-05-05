@@ -25,7 +25,7 @@
           :chart-data="patientsGraph"
           :date="Data.patients.date"
           :unit="'件'"
-          :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#002'"
+          :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00002.htm'"
           :linktitle="'三重県公式ホームページ'"
         />
       </v-col>

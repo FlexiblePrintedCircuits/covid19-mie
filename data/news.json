@@ -1,6 +1,11 @@
 {
     "newsItems": [
         {
+            "date": "2020/05/11",
+            "url": "https://www.pref.mie.lg.jp/covid19.shtm#%E8%A7%A3%E9%99%A4%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9",
+            "text": "三重県緊急事態措置解除の基本的考え方"
+        },
+        {
             "date": "2020/05/08",
             "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00019.htm",
             "text": "新型コロナウイルス感染症に関する知事からのメッセージ（５月８日）"

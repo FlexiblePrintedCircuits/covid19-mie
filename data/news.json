@@ -1,19 +1,19 @@
 {
     "newsItems": [
         {
+            "date": "2020/05/13",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0004900099.htm",
+            "text": "三重県経営向上支援新型コロナ危機対応補助金（感染防止対策型）の公募を開始します"
+        },
+        {
+            "date": "2020/05/13",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0031500194.htm",
+            "text": "三重県経営向上支援新型コロナ危機対応補助金（三重県版経営向上計画連携型・第２回目）の公募を開始します"
+        },
+        {
             "date": "2020/05/11",
             "url": "https://www.pref.mie.lg.jp/covid19.shtm#%E8%A7%A3%E9%99%A4%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9",
             "text": "三重県緊急事態措置解除の基本的考え方"
-        },
-        {
-            "date": "2020/05/08",
-            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00019.htm",
-            "text": "新型コロナウイルス感染症に関する知事からのメッセージ（５月８日）"
-        },
-        {
-            "date": "2020/05/05",
-            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066.htm#016",
-            "text": "新型コロナウイルス感染症拡大阻止に向けた「三重県緊急事態措置」ver.2～三重を守るために～"
         }
     ]
 }

@@ -65,7 +65,8 @@
     "Ivents Info": "新型コロナウイルス感染症に係る県主催イベントの中止・延期情報",
     "Facility Info": "新型コロナウイルス感染症に係る県有施設の休館情報",
     "Other local government sites":"他自治体の対策サイト",
-    "Mie Coronavirus Countermeasures Official LINE":"三重県コロナウイルス対策公式LINE"
+    "Mie Coronavirus Countermeasures Official LINE":"三重県コロナウイルス対策公式LINE",
+    "Evacuation response":"避難時の新型コロナウイルス感染症への対応について"
   }
 }
 </i18n>
@@ -116,8 +117,12 @@ export default {
           link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00004.htm'
         },
         {
+          title: this.$t('Evacuation response'),
+          link: 'https://www.pref.mie.lg.jp/D1BOUSAI/75148007862_00001.htm'
+        },
+        {
           title: this.$t('Message from Governor Suzuki'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00006.htm'
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00021.htm'
         },
         {
           title: this.$t('About us'),

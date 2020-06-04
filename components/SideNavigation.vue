@@ -122,7 +122,7 @@ export default {
         },
         {
           title: this.$t('Message from Governor Suzuki'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00006.htm'
+          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00021.htm'
         },
         {
           title: this.$t('About us'),

@@ -1,29 +1,19 @@
 {
     "newsItems": [
         {
+            "date": "2020/06/19",
+            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00083.htm",
+            "text": "感染症患者の発生（46例目）"
+        },
+        {
+            "date": "2020/06/19",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0014900508.htm",
+            "text": "帰国者・接触者相談センター及び一般相談窓口の電話番号が変わります"
+        },
+        {
             "date": "2020/06/04",
             "url": "https://www.pref.mie.lg.jp/D1BOUSAI/75963007864.htm",
             "text": "三重県避難所運営マニュアル策定指針を改定しました"
-        },
-        {
-            "date": "2020/05/29",
-            "url": "https://www.pref.mie.lg.jp/KIKAKUK/HP/m0005000052.htm",
-            "text": "“命”と“経済”の両立をめざす「みえモデル」を策定しました"
-        },
-        {
-            "date": "2020/05/29",
-            "url": "https://www.pref.mie.lg.jp/SENSOMU/HP/m0004000076.htm",
-            "text": "新型コロナウイルス感染症に係る学生支援事業について"
-        },
-        {
-            "date": "2020/05/26",
-            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00021.htm",
-            "text": "新型コロナウイルス感染症に関する知事からのメッセージ（５月２６日）"
-        },
-        {
-            "date": "2020/05/26",
-            "url": "https://www.pref.mie.lg.jp/common/content/000892193.pdf",
-            "text": "三重県指針ver.2～県民の皆様へ　命と健康を守るために～(PDF)"
         }
     ]
 }

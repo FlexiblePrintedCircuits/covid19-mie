@@ -1,6 +1,11 @@
 {
     "newsItems": [
         {
+            "date": "2020/06/23",
+            "url": "https://www.pref.mie.lg.jp/SENSOMU/HP/m0004000078.htm",
+            "text": "新型コロナウイルス感染症に係る学生支援事業について"
+        },
+        {
             "date": "2020/06/20",
             "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00084.htm",
             "text": "感染症患者の発生（46例目）（第２報）"
@@ -9,11 +14,6 @@
             "date": "2020/06/19",
             "url": "https://www.pref.mie.lg.jp/TOPICS/m0014900508.htm",
             "text": "帰国者・接触者相談センター及び一般相談窓口の電話番号が変わります"
-        },
-        {
-            "date": "2020/06/04",
-            "url": "https://www.pref.mie.lg.jp/D1BOUSAI/75963007864.htm",
-            "text": "三重県避難所運営マニュアル策定指針を改定しました"
         }
     ]
 }

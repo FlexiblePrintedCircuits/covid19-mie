@@ -1,9 +1,14 @@
 {
     "newsItems": [
         {
-            "date": "2020/07/03",
-            "url": "https://www.pref.mie.lg.jp/MOVIE/l1000200164.htm",
-            "text": "緊急時における知事からのメッセージ：東京都心部等の感染が拡大している地域への移動に関する知事からのメッセージ"
+            "date": "2020/07/10",
+            "url": "https://www.pref.mie.lg.jp/MOVIE/l1000200166.htm",
+            "text": "緊急時における知事からのメッセージ：東京都心部等の感染が急速に拡大している地域への移動に関する知事からのメッセージ"
+        },
+        {
+            "date": "2020/07/10",
+            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00002.htm",
+            "text": "感染症患者の発生（４７例目）"
         },
         {
             "date": "2020/07/01",
@@ -14,16 +19,6 @@
             "date": "2020/07/01",
             "url": "https://www.pref.mie.lg.jp/NANBU/HP/m0012300033.htm",
             "text": "南部地域自然体験促進事業費補助金（第１期）の受付開始について"
-        },
-        {
-            "date": "2020/06/26",
-            "url": "https://www.pref.mie.lg.jp/KANKO/HP/m0145700060.htm",
-            "text": "「三重県内周遊促進支援補助金」の募集を開始します"
-        },
-        {
-            "date": "2020/06/26",
-            "url": "https://www.pref.mie.lg.jp/TOPICS/m0323800061.htm",
-            "text": "食を通じた子育て・支え愛事業補助金を創設します"
         }
     ]
 }

@@ -1,34 +1,44 @@
 {
     "newsItems": [
         {
-            "date": "2020/07/19",
+            "date": "2020/07/20",
             "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00002.htm",
             "text": "感染症患者の発生"
+        },
+        {
+            "date": "2020/07/20",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0015900062.htm",
+            "text": "緊急包括支援事業の受付開始（介護分）"
+        },
+        {
+            "date": "2020/07/20",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0015900061.htm",
+            "text": "介護サービス事業所等に対するサービス継続支援事業の受付開始"
+        },
+        {
+            "date": "2020/07/20",
+            "url": "https://www.pref.mie.lg.jp/IRYOKAI/HP/m0346100013.htm",
+            "text": "感染拡大防止等支援補助金の受付開始（医療分）"
+        },
+        {
+            "date": "2020/07/20",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0324000074.htm",
+            "text": "対応従事者慰労金の申請受付開始（障がい福祉分）"
+        },
+        {
+            "date": "2020/07/20",
+            "url": "https://www.pref.mie.lg.jp/IRYOKAI/HP/m0346100012.htm",
+            "text": "対応従事者慰労金の申請受付開始（医療分）"
+        },
+        {
+            "date": "2020/07/20",
+            "url": "https://www.pref.mie.lg.jp/TOPICS/m0015900060.htm",
+            "text": "対応従事者慰労金の申請受付開始（介護分）"
         },
         {
             "date": "2020/07/16",
             "url": "https://www.pref.mie.lg.jp/MOVIE/l1000200167.htm",
             "text": "東京都心部等の感染が急速に拡大している地域への移動及び国のGo To Travel 事業に関する知事からの呼びかけ"
-        },
-        {
-            "date": "2020/07/10",
-            "url": "https://www.pref.mie.lg.jp/MOVIE/l1000200166.htm",
-            "text": "緊急時における知事からのメッセージ：東京都心部等の感染が急速に拡大している地域への移動に関する知事からのメッセージ"
-        },
-        {
-            "date": "2020/07/10",
-            "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00002.htm",
-            "text": "感染症患者の発生（４７例目）"
-        },
-        {
-            "date": "2020/07/01",
-            "url": "https://www.pref.mie.lg.jp/NANBU/HP/m0012300034.htm",
-            "text": "南部地域体験教育旅行促進事業費補助金の受付開始について"
-        },
-        {
-            "date": "2020/07/01",
-            "url": "https://www.pref.mie.lg.jp/NANBU/HP/m0012300033.htm",
-            "text": "南部地域自然体験促進事業費補助金（第１期）の受付開始について"
         }
     ]
 }

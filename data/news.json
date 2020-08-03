@@ -1,9 +1,14 @@
 {
     "newsItems": [
         {
-            "date": "2020/08/01",
+            "date": "2020/08/03",
             "url": "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00002.htm",
             "text": "感染症患者の発生"
+        },
+        {
+            "date": "2020/08/02",
+            "url": "https://www.pref.mie.lg.jp/common/content/000903989.pdf",
+            "text": "新型コロナウイルス感染拡大防止　三重県・四日市市・桑名市 共同メッセージ"
         },
         {
             "date": "2020/07/31",

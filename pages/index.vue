@@ -41,7 +41,7 @@
           :linktitle="'三重県オープンデータライブラリ'"
         />
       </v-col>
-      <v-col cols="12" md="6" class="DataCard">
+      <!--<v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="日別の陽性患者数"
           :title-id="'nownumber-of-confirmed-cases'"
@@ -51,7 +51,7 @@
           :unit="'人'"
           :show="false"
         />
-      </v-col>
+      </v-col>-->
       <v-col cols="12" md="6" class="DataCard">
         <data-table
           title="陽性患者の属性"

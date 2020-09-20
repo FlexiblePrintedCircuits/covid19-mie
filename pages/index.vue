@@ -5,7 +5,13 @@
       :title="headerItem.title"
       :date="headerItem.date"
     />
-    <whats-new class="mb-4" :items="newsItems" />
+    <whats-new
+      class="mb-4"
+      :items="newsItems"
+      :errormsg="newsErrorMsg"
+      :error="newsError"
+      :loaded="newsLoaded"
+    />
     <v-row class="DataBlock">
       <!--<v-col cols="12" md="6" class="DataCard">
         <svg-card
@@ -23,10 +29,13 @@
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
           :chart-data="patientsGraph"
-          :date="Data.patients.date"
+          :date="date.patientsGraph"
           :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00002.htm'"
           :linktitle="'三重県公式ホームページ'"
+          :errormsg="dataErrorMsg"
+          :error="dataError"
+          :loaded="dataLoaded"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
@@ -35,10 +44,13 @@
           :title-id="'number-of-tested-cases'"
           :chart-id="'time-bar-chart-tested'"
           :chart-data="inspectionsGraph"
-          :date="Data.inspections_summary.date"
+          :date="date.inspectionsGraph"
           :unit="'件'"
           :url="'https://www.pref.mie.lg.jp/IT/HP/87587000001_00002.htm'"
           :linktitle="'三重県オープンデータライブラリ'"
+          :errormsg="dataErrorMsg"
+          :error="dataError"
+          :loaded="dataLoaded"
         />
       </v-col>
       <!--<v-col cols="12" md="6" class="DataCard">
@@ -58,10 +70,13 @@
           :title-id="'attributes-of-confirmed-cases'"
           :chart-data="patientsTable"
           :chart-option="{}"
-          :date="Data.patients.date"
+          :date="date.patientsTable"
           :info="sumInfoOfPatients"
           :url="'https://www.pref.mie.lg.jp/IT/HP/87587000001_00002.htm'"
           :linktitle="'三重県オープンデータライブラリ'"
+          :errormsg="dataErrorMsg"
+          :error="dataError"
+          :loaded="dataLoaded"
         />
       </v-col>
       <!--
@@ -109,13 +124,13 @@ import TimeBarChart from '@/components/TimeBarChart.vue'
 // import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 // import StaticInfo from '@/components/StaticInfo.vue'
-import Data from '@/data/data.json'
+// import Data from '@/data/data.json'
 // import MetroData from '@/data/metro.json'
 import DataTable from '@/components/DataTable.vue'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 // import formatConfirmedCases from '@/utils/formatConfirmedCases'
-import News from '@/data/news.json'
+// import News from '@/data/news.json'
 // import SvgCard from '@/components/SvgCard.vue'
 // import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
 
@@ -132,10 +147,10 @@ export default {
   },
   data() {
     // 感染者数グラフ
-    const nowpatientsGraph = formatGraph(Data.nowinfectedperson.data)
-    const patientsGraph = formatGraph(Data.patients_summary.data)
+    // const nowpatientsGraph = formatGraph(Data.nowinfectedperson.data)
+    // const patientsGraph = formatGraph(Data.patients_summary.data)
     // 感染者数
-    const patientsTable = formatTable(Data.patients.data)
+    // const patientsTable = formatTable(Data.patients.data)
     // 退院者グラフ
     // const dischargesGraph = formatGraph(Data.discharges_summary.data)
 
@@ -152,7 +167,7 @@ export default {
     ]
     */
 
-    const inspectionsGraph = formatGraph(Data.inspections_summary.data)
+    // const inspectionsGraph = formatGraph(Data.inspections_summary.data)
 
     /* const inspectionsItems = [
       '県内発生（疑い例・接触者調査）',
@@ -167,7 +182,7 @@ export default {
     // )
     // 検査陽性者の状況
     // const confirmedCases = formatConfirmedCases(Data.main_summary)
-
+    /*
     const sumInfoOfPatients = {
       lText: patientsGraph[
         patientsGraph.length - 1
@@ -175,29 +190,44 @@ export default {
       sText: patientsGraph[patientsGraph.length - 1].label + 'までの累計',
       unit: '人'
     }
+    */
 
     const data = {
-      Data,
-      patientsTable,
-      patientsGraph,
+      dataLoaded: false,
+      newsLoaded: false,
+      dataErrorMsg: '',
+      newsErrorMsg: '',
+      dataError: false,
+      newsError: false,
+
+      patientsTable: {},
+      patientsGraph: [],
       // 追加、現在の陽性患者数のグラフに必要なやつ
-      nowpatientsGraph,
+      // nowpatientsGraph: {},
       // dischargesGraph,
       // contactsGraph,
       // querentsGraph,
       // metroGraph,
-      inspectionsGraph,
+      inspectionsGraph: [],
       // inspectionsItems,
       // inspectionsLabels,
       // confirmedCases,
-      sumInfoOfPatients,
-
+      sumInfoOfPatients: {
+        lText: '',
+        sText: '',
+        unit: '人'
+      },
+      date: {
+        patientsTable: '',
+        patientsGraph: '',
+        inspectionsGraph: ''
+      },
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: '三重県内の最新感染動向',
-        date: Data.lastUpdate
+        date: ''
       },
-      newsItems: News.newsItems
+      newsItems: []
       /* metroGraphOption: {
         responsive: true,
         legend: {
@@ -253,6 +283,64 @@ export default {
       //  }
     }
     return data
+  },
+  created() {
+    this.getFromAPI()
+  },
+  methods: {
+    getFromAPI() {
+      Promise.all([this.getDataFromAPI(), this.getNewsFromAPI()])
+    },
+    getDataFromAPI() {
+      fetch(
+        `https://raw.githubusercontent.com/sakurum/covid19-mie-getdata/gh-pages/data.json`
+      )
+        .then(response => response.json())
+        .then(responseJson => {
+          // 感染者数グラフ
+          // this.nowpatientsGraph = formatGraph(Data.nowinfectedperson.data)
+          this.patientsGraph = formatGraph(responseJson.patients_summary.data)
+          this.inspectionsGraph = formatGraph(
+            responseJson.inspections_summary.data
+          )
+          // 感染者数
+          this.patientsTable = formatTable(responseJson.patients.data)
+          this.date = {
+            patientsTable: responseJson.patients.date,
+            patientsGraph: responseJson.patients_summary.date,
+            inspectionsGraph: responseJson.inspections_summary.date
+          }
+          this.headerItem.date = responseJson.lastUpdate
+          this.sumInfoOfPatients = {
+            lText: this.patientsGraph[
+              this.patientsGraph.length - 1
+            ].cumulative.toLocaleString(),
+            sText:
+              this.patientsGraph[this.patientsGraph.length - 1].label +
+              'までの累計',
+            unit: '人'
+          }
+          this.dataLoaded = true
+        })
+        .catch(error => {
+          this.dataError = true
+          this.dataErrorMsg = error.toString()
+        })
+    },
+    getNewsFromAPI() {
+      fetch(
+        `https://raw.githubusercontent.com/sakurum/covid19-mie-getdata/gh-pages/news.json`
+      )
+        .then(response => response.json())
+        .then(responseJson => {
+          this.newsItems = responseJson.newsItems
+          this.newsLoaded = true
+        })
+        .catch(error => {
+          this.newsError = true
+          this.newsErrorMsg = error.toString()
+        })
+    }
   },
   head() {
     return {

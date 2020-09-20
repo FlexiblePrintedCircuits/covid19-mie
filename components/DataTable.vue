@@ -9,16 +9,33 @@
     <template v-slot:button>
       <span />
     </template>
-    <v-data-table
-      :headers="chartData.headers"
-      :items="chartData.datasets"
-      :items-per-page="-1"
-      :hide-default-footer="true"
-      :height="240"
-      :fixed-header="true"
-      :mobile-breakpoint="0"
-      class="cardTable"
-    />
+    <v-overlay
+      opacity="0"
+      absolute
+      :value="!loaded"
+      justify-center
+      align-center
+    >
+      <scale-loader color="#ff8d5b" />
+    </v-overlay>
+    <v-overlay absolute :value="error" justify-center align-center>
+      <v-alert type="error" color="#AD2121">
+        {{ title }} の読み込みに失敗しました <br />
+        エラーメッセージ: {{ errormsg }}
+      </v-alert>
+    </v-overlay>
+    <v-layout :class="{ loading: !loaded || error }" column>
+      <v-data-table
+        :headers="chartData.headers"
+        :items="chartData.datasets"
+        :items-per-page="-1"
+        :hide-default-footer="true"
+        :height="240"
+        :fixed-header="true"
+        :mobile-breakpoint="0"
+        class="cardTable"
+      />
+    </v-layout>
     <!-- <div class="note">※退院には、死亡退院を含む</div> -->
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
@@ -74,14 +91,18 @@
   font-size: 12px;
   color: #808080;
 }
+.loading {
+  visibility: hidden;
+}
 </style>
 
 <script>
+import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 
 export default {
-  components: { DataView, DataViewBasicInfoPanel },
+  components: { DataView, DataViewBasicInfoPanel, ScaleLoader },
   props: {
     title: {
       type: String,
@@ -113,6 +134,18 @@ export default {
       type: String,
       required: false,
       default: '三重県公式ホームページ'
+    },
+    loaded: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    errormsg: {
+      type: String,
+      default: ''
     }
   }
 }

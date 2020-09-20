@@ -10,12 +10,29 @@
     <template v-if="show" v-slot:button>
       <data-selector v-model="dataKind" />
     </template>
-    <bar
-      :chart-id="chartId"
-      :chart-data="displayData"
-      :options="displayOption"
-      :height="240"
-    />
+    <v-overlay
+      opacity="0"
+      absolute
+      :value="!loaded"
+      justify-center
+      align-center
+    >
+      <scale-loader color="#ff8d5b" />
+    </v-overlay>
+    <v-overlay absolute :value="error" justify-center align-center>
+      <v-alert type="error" color="#AD2121">
+        {{ title }} の読み込みに失敗しました <br />
+        エラーメッセージ: {{ errormsg }}
+      </v-alert>
+    </v-overlay>
+    <v-layout :class="{ loading: !loaded || error }" column>
+      <bar
+        :chart-id="chartId"
+        :chart-data="displayData"
+        :options="displayOption"
+        :height="240"
+      />
+    </v-layout>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
@@ -26,15 +43,20 @@
   </data-view>
 </template>
 
-<style></style>
+<style>
+.loading {
+  visibility: hidden;
+}
+</style>
 
 <script>
+import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 
 export default {
-  components: { DataView, DataSelector, DataViewBasicInfoPanel },
+  components: { DataView, DataSelector, DataViewBasicInfoPanel, ScaleLoader },
   props: {
     title: {
       type: String,
@@ -80,6 +102,18 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    loaded: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    errormsg: {
+      type: String,
+      default: ''
     }
   },
   data() {
@@ -99,6 +133,13 @@ export default {
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayInfo() {
+      if (this.loaded === false) {
+        return {
+          lText: '',
+          sText: '',
+          unit: ''
+        }
+      }
       if (this.dataKind === 'transition') {
         return {
           lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
@@ -117,6 +158,19 @@ export default {
       }
     },
     displayData() {
+      if (this.loaded === false) {
+        return {
+          labels: [],
+          datasets: [
+            {
+              label: this.dataKind,
+              data: [],
+              backgroundColor: '#ff8d5b',
+              borderWidth: 0
+            }
+          ]
+        }
+      }
       if (this.dataKind === 'transition') {
         return {
           labels: this.chartData.map(d => {

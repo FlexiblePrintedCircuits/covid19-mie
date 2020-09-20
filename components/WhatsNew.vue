@@ -44,6 +44,18 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    loaded: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    errormsg: {
+      type: String,
+      default: ''
     }
   },
   methods: {
@@ -114,5 +126,9 @@ export default {
       }
     }
   }
+}
+
+.loading {
+  visibility: hidden;
 }
 </style>

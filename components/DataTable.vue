@@ -27,16 +27,22 @@
     <v-layout :class="{ loading: !loaded || error }" column>
       <v-data-table
         :headers="chartData.headers"
-        :items="chartData.datasets"
+        :items="displayLists"
         :items-per-page="-1"
         :hide-default-footer="true"
-        :height="240"
+        :height="480"
         :fixed-header="true"
         :mobile-breakpoint="0"
         class="cardTable"
       />
     </v-layout>
     <!-- <div class="note">※退院には、死亡退院を含む</div> -->
+    <v-pagination
+      v-model="pageNum"
+      :length="length"
+      :total-visible="7"
+      @input="pageChange"
+    />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="info.lText"
@@ -146,6 +152,29 @@ export default {
     errormsg: {
       type: String,
       default: ''
+    }
+  },
+  data() {
+    return {
+      pageNum: 1,
+      length: 5,
+      pageSize: 50,
+      displayLists: []
+    }
+  },
+  mounted() {
+    this.length = Math.ceil(this.chartData.datasets.length / this.pageSize)
+    this.displayLists = this.chartData.datasets.slice(
+      this.pageSize * (this.pageNum - 1),
+      this.pageSize * this.pageNum
+    )
+  },
+  methods: {
+    pageChange() {
+      this.displayLists = this.chartData.datasets.slice(
+        this.pageSize * (this.pageNum - 1),
+        this.pageSize * this.pageNum
+      )
     }
   }
 }

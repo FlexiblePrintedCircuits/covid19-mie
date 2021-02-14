@@ -272,11 +272,11 @@ export default {
                 maxRotation: 0,
                 minRotation: 0,
                 callback: label => {
-                  return label.split('/')[1]
+                  return label
                 }
               }
-            },
-            {
+            }
+            /* {
               id: 'month',
               stacked: true,
               gridLines: {
@@ -316,7 +316,7 @@ export default {
               time: {
                 unit: 'month'
               }
-            }
+            } */
           ],
           yAxes: [
             {

@@ -96,7 +96,7 @@
     <TextCard title="お問い合わせ先（開発チームの連絡先です）">
       三重県 新型コロナウイルス感染症 対策サイト 開発チーム<br />
       メール
-      <a href="mailto:18440@toba.kosen-ac.jp">18440@toba.kosen-ac.jp</a>
+      <a href="mailto:yugehayata.dev@gmail.com">yugehayata.dev@gmail.com</a>
     </TextCard>
   </div>
 </template>

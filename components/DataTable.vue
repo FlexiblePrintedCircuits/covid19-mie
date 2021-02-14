@@ -41,6 +41,7 @@
       v-model="pageNum"
       :length="length"
       :total-visible="7"
+      color="#f96b2c"
       @input="pageChange"
     />
     <template v-slot:infoPanel>

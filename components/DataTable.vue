@@ -35,15 +35,15 @@
         :mobile-breakpoint="0"
         class="cardTable"
       />
+      <v-pagination
+        v-model="pageNum"
+        :length="paginationLength"
+        :total-visible="7"
+        color="#f96b2c"
+        style="padding-top: 35px"
+      />
     </v-layout>
     <!-- <div class="note">※退院には、死亡退院を含む</div> -->
-    <v-pagination
-      v-model="pageNum"
-      :length="length"
-      :total-visible="7"
-      color="#f96b2c"
-      @input="pageChange"
-    />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="info.lText"
@@ -158,25 +158,24 @@ export default {
   data() {
     return {
       pageNum: 1,
-      length: 5,
-      pageSize: 50,
-      displayLists: []
+      pageSize: 50
     }
   },
-  mounted() {
-    this.length = Math.ceil(this.chartData.datasets.length / this.pageSize)
-    this.displayLists = this.chartData.datasets.slice(
-      this.pageSize * (this.pageNum - 1),
-      this.pageSize * this.pageNum
-    )
-  },
-  methods: {
-    pageChange() {
-      this.displayLists = this.chartData.datasets.slice(
-        this.pageSize * (this.pageNum - 1),
-        this.pageSize * this.pageNum
-      )
+  computed: {
+    paginationLength() {
+      return this.loaded
+        ? Math.ceil(this.chartData.datasets.length / this.pageSize)
+        : 5
+    },
+    displayLists() {
+      return this.loaded
+        ? this.chartData.datasets.slice(
+            this.pageSize * (this.pageNum - 1),
+            this.pageSize * this.pageNum
+          )
+        : []
     }
-  }
+  },
+  methods: {}
 }
 </script>

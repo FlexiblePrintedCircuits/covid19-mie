@@ -138,10 +138,7 @@ export default {
   },
   computed: {
     sliderMax() {
-      if (!this.chartData || this.chartData.length === 0) {
-        return 1
-      }
-      return this.chartData.length - 1
+      return this.loaded ? this.chartData.length - 1 : 1
     },
     displayCumulativeRatio() {
       const lastDay = this.chartData.slice(-1)[0].cumulative
@@ -267,16 +264,14 @@ export default {
               },
               ticks: {
                 fontSize: 9,
-                maxTicksLimit: 20,
+                maxTicksLimit: 15,
                 fontColor: '#808080',
-                maxRotation: 0,
-                minRotation: 0,
                 callback: label => {
-                  return label.split('/')[1]
+                  return label
                 }
               }
-            },
-            {
+            }
+            /* {
               id: 'month',
               stacked: true,
               gridLines: {
@@ -316,7 +311,7 @@ export default {
               time: {
                 unit: 'month'
               }
-            }
+            } */
           ],
           yAxes: [
             {

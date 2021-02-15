@@ -138,10 +138,7 @@ export default {
   },
   computed: {
     sliderMax() {
-      if (!this.chartData || this.chartData.length === 0) {
-        return 1
-      }
-      return this.chartData.length - 1
+      return this.loaded ? this.chartData.length - 1 : 1
     },
     displayCumulativeRatio() {
       const lastDay = this.chartData.slice(-1)[0].cumulative

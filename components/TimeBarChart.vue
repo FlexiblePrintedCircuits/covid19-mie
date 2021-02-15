@@ -33,6 +33,12 @@
         :height="240"
       />
     </v-layout>
+    <date-select-slider
+      :chart-data="chartData"
+      :value="[0, sliderMax]"
+      :slider-max="sliderMax"
+      @sliderInput="sliderUpdate"
+    />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
@@ -55,8 +61,16 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 
+const DateSelectSlider = () => import('@/components/DateSelectSlider.vue')
+
 export default {
-  components: { DataView, DataSelector, DataViewBasicInfoPanel, ScaleLoader },
+  components: {
+    DataView,
+    DataSelector,
+    DataViewBasicInfoPanel,
+    ScaleLoader,
+    DateSelectSlider
+  },
   props: {
     title: {
       type: String,
@@ -118,10 +132,17 @@ export default {
   },
   data() {
     return {
-      dataKind: 'transition'
+      dataKind: 'transition',
+      graphRange: [0, 1]
     }
   },
   computed: {
+    sliderMax() {
+      if (!this.chartData || this.chartData.length === 0) {
+        return 1
+      }
+      return this.chartData.length - 1
+    },
     displayCumulativeRatio() {
       const lastDay = this.chartData.slice(-1)[0].cumulative
       const lastDayBefore = this.chartData.slice(-2)[0].cumulative
@@ -173,15 +194,19 @@ export default {
       }
       if (this.dataKind === 'transition') {
         return {
-          labels: this.chartData.map(d => {
-            return d.label
-          }),
+          labels: this.chartData
+            .map(d => {
+              return d.label
+            })
+            .slice(this.graphRange[0], this.graphRange[1]),
           datasets: [
             {
-              label: this.dataKind,
-              data: this.chartData.map(d => {
-                return d.transition
-              }),
+              label: this.dataKind.slice(0, 30),
+              data: this.chartData
+                .map(d => {
+                  return d.transition
+                })
+                .slice(this.graphRange[0], this.graphRange[1]),
               backgroundColor: '#ff8d5b',
               borderWidth: 0
             }
@@ -189,15 +214,19 @@ export default {
         }
       }
       return {
-        labels: this.chartData.map(d => {
-          return d.label
-        }),
+        labels: this.chartData
+          .map(d => {
+            return d.label
+          })
+          .slice(this.graphRange[0], this.graphRange[1]),
         datasets: [
           {
-            label: this.dataKind,
-            data: this.chartData.map(d => {
-              return d.cumulative
-            }),
+            label: this.dataKind.slice(this.graphRange[0], this.graphRange[1]),
+            data: this.chartData
+              .map(d => {
+                return d.cumulative
+              })
+              .slice(this.graphRange[0], this.graphRange[1]),
             backgroundColor: '#ff8d5b',
             borderWidth: 0
           }
@@ -309,6 +338,9 @@ export default {
     }
   },
   methods: {
+    sliderUpdate(sliderValue) {
+      this.graphRange = sliderValue
+    },
     formatDayBeforeRatio(dayBeforeRatio) {
       const dayBeforeRatioLocaleString = dayBeforeRatio.toLocaleString()
       switch (Math.sign(dayBeforeRatio)) {

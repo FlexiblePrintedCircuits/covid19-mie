@@ -27,13 +27,20 @@
     <v-layout :class="{ loading: !loaded || error }" column>
       <v-data-table
         :headers="chartData.headers"
-        :items="chartData.datasets"
+        :items="displayLists"
         :items-per-page="-1"
         :hide-default-footer="true"
-        :height="240"
+        :height="480"
         :fixed-header="true"
         :mobile-breakpoint="0"
         class="cardTable"
+      />
+      <v-pagination
+        v-model="pageNum"
+        :length="paginationLength"
+        :total-visible="7"
+        color="#f96b2c"
+        style="padding-top: 35px"
       />
     </v-layout>
     <!-- <div class="note">※退院には、死亡退院を含む</div> -->
@@ -147,6 +154,28 @@ export default {
       type: String,
       default: ''
     }
-  }
+  },
+  data() {
+    return {
+      pageNum: 1,
+      pageSize: 50
+    }
+  },
+  computed: {
+    paginationLength() {
+      return this.loaded
+        ? Math.ceil(this.chartData.datasets.length / this.pageSize)
+        : 5
+    },
+    displayLists() {
+      return this.loaded
+        ? this.chartData.datasets.slice(
+            this.pageSize * (this.pageNum - 1),
+            this.pageSize * this.pageNum
+          )
+        : []
+    }
+  },
+  methods: {}
 }
 </script>

@@ -267,10 +267,8 @@ export default {
               },
               ticks: {
                 fontSize: 9,
-                maxTicksLimit: 20,
+                maxTicksLimit: 15,
                 fontColor: '#808080',
-                maxRotation: 0,
-                minRotation: 0,
                 callback: label => {
                   return label
                 }

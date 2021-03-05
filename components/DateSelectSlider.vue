@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-
 export default {
   name: 'DateSelectSlider',
   props: {
@@ -64,7 +62,7 @@ export default {
       if (!this.chartData || this.chartData.length === 0) {
         return 1
       }
-      return dayjs(this.chartData[id].label).format('M/D')
+      return this.chartData[id].label
     }
   }
 }

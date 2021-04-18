@@ -42,12 +42,17 @@ export default {
         v =>
           Math.abs(v[0] - v[1]) >= 13 ||
           this.$t('表示期間の最小範囲は１４日間です')
-      ]
+      ],
+      defaultRange: 90
     }
   },
   watch: {
     sliderMax() {
-      this.sliderValue = [0, this.sliderMax]
+      const leftSliderValue =
+        this.sliderMax - this.defaultRange >= 0
+          ? this.sliderMax - this.defaultRange
+          : 0
+      this.sliderValue = [leftSliderValue, this.sliderMax]
     },
     sliderValue(newValue, oldValue) {
       if (Math.abs(newValue[0] - newValue[1]) < 13) {

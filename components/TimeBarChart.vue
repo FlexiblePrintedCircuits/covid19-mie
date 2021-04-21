@@ -133,7 +133,8 @@ export default {
   data() {
     return {
       dataKind: 'transition',
-      graphRange: [0, 1]
+      graphRange: [0, 1],
+      defaultRange: 90
     }
   },
   computed: {
@@ -331,6 +332,14 @@ export default {
         }
       }
     }
+  },
+  created() {
+    this.graphRange = [
+      this.chartData.length - this.defaultRange >= 0
+        ? this.chartData.length - this.defaultRange
+        : 0,
+      this.chartData.length
+    ]
   },
   methods: {
     sliderUpdate(sliderValue) {

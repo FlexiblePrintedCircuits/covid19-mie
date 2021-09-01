@@ -1,33 +1,12 @@
 /*!
-  * vue-router v3.1.6
-  * (c) 2020 Evan You
+  * vue-router v3.5.2
+  * (c) 2021 Evan You
   * @license MIT
   */
 
 /*!
-  * vue-scrollto v2.17.1
-  * (c) 2019 Randjelovic Igor
-  * @license MIT
-  */
-
-/*!
- * Chart.js v2.9.3
- * https://www.chartjs.org
- * (c) 2019 Chart.js Contributors
- * Released under the MIT License
- */
-
-/*!
- * JavaScript Cookie v2.2.1
- * https://github.com/js-cookie/js-cookie
- *
- * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
- * Released under the MIT license
- */
-
-/*!
- * Vue.js v2.6.11
- * (c) 2014-2019 Evan You
+ * Vue.js v2.6.14
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
 
@@ -38,15 +17,29 @@
  * MIT Licensed
  */
 
+
 /*!
- * vue-client-only v2.0.0
- * (c) 2019-present egoist <0x142857@gmail.com>
+  * vue-scrollto v2.20.0
+  * (c) 2019 Randjelovic Igor
+  * @license MIT
+  */
+
+/*!
+ * Chart.js v2.9.4
+ * https://www.chartjs.org
+ * (c) 2020 Chart.js Contributors
+ * Released under the MIT License
+ */
+
+/*!
+ * vue-client-only v0.0.0-semantic-release
+ * (c) 2021-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
  */
 
 /*!
- * vue-i18n v8.15.4 
- * (c) 2020 kazuya kawaguchi
+ * vue-i18n v8.25.0 
+ * (c) 2021 kazuya kawaguchi
  * Released under the MIT License.
  */
 
@@ -57,7 +50,11 @@
  */
 
 /**
-  * vue-class-component v7.2.3
+  * vue-class-component v7.2.6
   * (c) 2015-present Evan You
   * @license MIT
   */
+
+//! moment.js
+
+//! moment.js locale configuration

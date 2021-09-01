@@ -55,9 +55,10 @@ export default Vue.extend({
     }
   },
   head(): MetaInfo {
-    const { htmlAttrs } = this.$nuxtI18nSeo()
     return {
-      htmlAttrs,
+      htmlAttrs: {
+        lang: 'ja'
+      },
       link: [
         {
           rel: 'canonical',

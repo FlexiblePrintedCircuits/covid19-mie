@@ -60,10 +60,8 @@
     "for Citizens": "県民の皆様へ",
     "for Enterprises and Employees": "企業の皆様・はたらく皆様へ",
     "Government official website": "三重県公式ホームページ",
-    "Message from Governor Suzuki": "知事からのメッセージ",
     "About us": "当サイトについて",
     "Ivents Info": "新型コロナウイルス感染症に係る県主催イベントの中止・延期情報",
-    "Facility Info": "新型コロナウイルス感染症に係る県有施設の休館情報",
     "Other local government sites":"他自治体の対策サイト",
     "Mie Coronavirus Countermeasures Official LINE":"三重県コロナウイルス対策公式LINE",
     "Evacuation response":"避難時の新型コロナウイルス感染症への対応について"
@@ -113,16 +111,8 @@ export default {
           link: 'https://www.pref.mie.lg.jp/KI2KANRI/HP/m0101300022.htm'
         },
         {
-          title: this.$t('Facility Info'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00004.htm'
-        },
-        {
           title: this.$t('Evacuation response'),
           link: 'https://www.pref.mie.lg.jp/D1BOUSAI/75148007862_00001.htm'
-        },
-        {
-          title: this.$t('Message from Governor Suzuki'),
-          link: 'https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00021.htm'
         },
         {
           title: this.$t('About us'),

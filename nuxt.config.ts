@@ -173,8 +173,7 @@ const config: Configuration = {
       ]
     },
     // https://ja.nuxtjs.org/api/configuration-build/#hardsource
-    hardSource: process.env.NODE_ENV === 'development',
-    extractCSS: true
+    hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
     name: '三重県 新型コロナウイルス感染症 情報まとめサイト',
